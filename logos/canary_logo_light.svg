@@ -5,7 +5,7 @@
     /* cl-l: cartouche letters (A, I) — white to contrast against teal cartouche */
     .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
     /* tl-l: tagline — mid teal, subordinate to wordmark */
-    .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#7A9A96; font-size:22px; letter-spacing:7px; font-weight:300; }
+    .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:22px; letter-spacing:7px; font-weight:400; }
   </style></defs>
 
   <!-- No background — transparent, works on white documents and website -->
@@ -23,7 +23,7 @@
   <text x="242" y="235" class="wm-l" letter-spacing="4">NSTITUTE</text>
 
   <!-- Horizontal rule separating wordmark from tagline -->
-  <line x1="108" y1="272" x2="720" y2="272" stroke="#1A4A44" stroke-width="0.8"/>
+  <line x1="108" y1="272" x2="720" y2="272" stroke="#1A4A44" stroke-width="1.5"/>
 
   <!-- Tagline -->
   <text x="414" y="312" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
