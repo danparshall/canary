@@ -22,6 +22,6 @@ Path: @/src/components
 
 - The Nav link array is hardcoded -- adding a new page to `@/src/pages/` also requires adding an entry to this array
 - Nav's `isActive()` handles the home route specially: it matches both `/canary/` and `/canary` (with or without trailing slash)
-- Nav's max-width is 900px (wider than the 800px content container) to give the navigation more horizontal space
+- Nav's max-width uses `var(--max-width)` (800px), matching the content container
 
 Created and maintained by Nori.
