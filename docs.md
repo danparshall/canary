@@ -4,7 +4,7 @@ Path: @/
 
 ### Overview
 
-- Static website for The Canary Institute, an AI safety organization, built with Astro 5.x
+- Static website for The Canary Institute, an AI policy organization, built with Astro 5.x
 - Ships zero JavaScript to the browser -- all pages are pre-rendered HTML + CSS
 - Hosted on GitHub Pages at `https://danparshall.github.io/canary/` via a GitHub Actions workflow
 

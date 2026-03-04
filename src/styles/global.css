@@ -1,9 +1,9 @@
 /* Design tokens */
 :root {
-  --color-dark: #111;
-  --color-gold: #D4AF37;
+  --color-dark: #1A2A28;
+  --color-accent: #1A4A44;
   --color-grey: #4A4A4A;
-  --color-light-grey: #717171;
+  --color-light-grey: #527872;
   --color-bg: #FAFAF8;
   --color-white: #fff;
   --color-border: #e5e5e3;
@@ -69,7 +69,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 /* Layout */

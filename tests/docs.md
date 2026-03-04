@@ -22,6 +22,7 @@ Path: @/tests
 - **Responsive tests**: Set viewport to 375px width and verify nav remains visible and functional
 - **Accessibility tests**: Run axe-core on each page and assert zero violations
 - **Performance tests**: Verify each page loads within 3 seconds and the document has a valid `<title>`
+- **Branding tests** (`branding.spec.ts`): Guard the teal color palette and "AI Policy" tagline -- verify CSS tokens contain teal values, no gold `#D4AF37` remnants exist in stylesheets or the logo SVG, and page titles/descriptions/taglines reference "AI Policy"
 
 ### Things to Know
 

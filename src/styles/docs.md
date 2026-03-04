@@ -11,7 +11,7 @@ Path: @/src/styles
 
 - Imported once in `@/src/layouts/BaseLayout.astro`; the custom properties cascade to all components and pages
 - Components in `@/src/components/` reference these variables in their scoped `<style>` blocks (e.g., `var(--color-border)`, `var(--nav-height)`)
-- Pages use utility classes defined here (`.section`, `.tagline`, `.gold`, `.container`)
+- Pages use utility classes defined here (`.section`, `.tagline`, `.container`)
 
 ### Core Implementation
 
@@ -19,10 +19,10 @@ Path: @/src/styles
 
 | Token | Value | Purpose |
 |---|---|---|
-| `--color-dark` | `#111` | Headings, links, active nav |
-| `--color-gold` | `#D4AF37` | Accent / hover color |
+| `--color-dark` | `#1A2A28` | Dark teal-tinged charcoal for headings, links, active nav |
+| `--color-accent` | `#1A4A44` | Deep teal accent / hover color (renamed from `--color-gold`) |
 | `--color-grey` | `#4A4A4A` | Body text |
-| `--color-light-grey` | `#717171` | Footer text |
+| `--color-light-grey` | `#527872` | Teal-tinted muted text (footer, secondary); adjusted from brand spec `#7A9A96` for WCAG AA compliance |
 | `--color-bg` | `#FAFAF8` | Page background |
 | `--color-white` | `#fff` | Nav background |
 | `--color-border` | `#e5e5e3` | Horizontal rules, nav/footer borders |
@@ -32,7 +32,7 @@ Path: @/src/styles
 | `--nav-height` | `4rem` | Nav bar height |
 
 - **Layout**: `.container` applies `max-width` + auto margins + horizontal padding. `main` uses `min-height: calc(100vh - nav - footer)` to push the footer to the bottom on short pages.
-- **Typography**: Headings use `--font-heading` with `font-weight: 400`; paragraphs use `--color-grey`; links are unstyled (no underline) with gold hover.
+- **Typography**: Headings use `--font-heading` with `font-weight: 400`; paragraphs use `--color-grey`; links are unstyled (no underline) with teal accent hover via `--color-accent`.
 
 ### Things to Know
 

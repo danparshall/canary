@@ -16,7 +16,7 @@ Path: @/src/layouts
 
 ### Core Implementation
 
-- **Props**: `title` (required string), `description` (optional string, defaults to "The Canary Institute for AI Safety")
+- **Props**: `title` (required string), `description` (optional string, defaults to "The Canary Institute for AI Policy")
 - **Structure**: `<html>` > `<head>` (charset, viewport, description, favicon, Google Fonts preconnect + Cinzel import, title) > `<body>` > Nav > `<main><div class="container"><slot /></div></main>` > Footer
 - The `<main>` element wraps content in a `.container` div that applies `max-width` and centering from global.css
 
