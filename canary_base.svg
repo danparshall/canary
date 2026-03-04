@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+
+<style>
+.title { font-family: "Trajan Pro", "Cinzel", "Times New Roman", serif; fill:#111; }
+.tagline { font-family: "Helvetica", "Arial", sans-serif; fill:#666; letter-spacing:6px; }
+.gold { fill:#D4AF37; }
+</style>
+
+<!-- AI Cartouche -->
+<rect x="390" y="120" width="110" height="220" rx="18" fill="#111"/>
+
+<!-- Gold AI letters -->
+<text x="445" y="200" text-anchor="middle" class="gold title" font-size="95">A</text>
+<text x="445" y="300" text-anchor="middle" class="gold title" font-size="95">I</text>
+
+<!-- CANARY -->
+<text x="220" y="200" class="title" font-size="120">C</text>
+<text x="510" y="200" class="title" font-size="95" letter-spacing="8">ANARY</text>
+
+<!-- INSTITUTE -->
+<text x="510" y="300" class="title" font-size="85" letter-spacing="6">INSTITUTE</text>
+
+<!-- Tagline -->
+<text x="600" y="400" text-anchor="middle" class="tagline" font-size="28">
+FOR AI SAFETY
+</text>
+
+</svg>
