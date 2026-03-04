@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const pages = ['./', 'about/', 'research/', 'policy/'];
+const pages = ['./', 'about/', 'research/', 'policy/', 'blog/'];
 
 for (const path of pages) {
   const label = path === './' ? '/' : `/${path}`;
@@ -11,12 +11,12 @@ for (const path of pages) {
     await expect(logo.first()).toBeVisible();
   });
 
-  test(`page ${label} has navigation with 4 links`, async ({ page }) => {
+  test(`page ${label} has navigation with 5 links`, async ({ page }) => {
     await page.goto(path);
     const nav = page.locator('nav');
     await expect(nav).toBeVisible();
     const links = nav.locator('a');
-    await expect(links).toHaveCount(4);
+    await expect(links).toHaveCount(5);
   });
 
   test(`page ${label} has a footer`, async ({ page }) => {
