@@ -9,6 +9,7 @@ const pages = [
   { path: 'about/', file: 'about/index.html' },
   { path: 'research/', file: 'research/index.html' },
   { path: 'policy/', file: 'policy/index.html' },
+  { path: 'blog/', file: 'blog/index.html' },
 ];
 
 for (const { path, file } of pages) {
