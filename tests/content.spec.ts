@@ -37,7 +37,7 @@ test('blog listing page has correct heading', async ({ page }) => {
 
 test('blog listing page links to at least one post', async ({ page }) => {
   await page.goto('blog/');
-  const postLinks = page.locator('.post-preview h2 a');
+  const postLinks = page.locator('.toc-entry a');
   const count = await postLinks.count();
   expect(count).toBeGreaterThanOrEqual(1);
 });
