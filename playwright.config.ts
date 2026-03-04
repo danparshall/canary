@@ -7,11 +7,11 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:4321/canary/',
+    baseURL: 'http://localhost:4321/',
   },
   webServer: {
     command: 'npm run dev',
-    url: 'http://localhost:4321/canary/',
+    url: 'http://localhost:4321/',
     reuseExistingServer: !process.env.CI,
     timeout: 30000,
   },
