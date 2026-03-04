@@ -2,10 +2,113 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="The Canary Institute | AI Policy">
+<BaseLayout title="The Canary Institute | AI Safety Research & Policy">
   <section class="hero">
     <h1>The Canary Institute</h1>
-    <p class="tagline">For AI Policy</p>
+    <p class="tagline">AI Safety Research &amp; Public Advocacy</p>
+    <p class="hero-intro">
+      Independent, non-partisan research and public advocacy for the safe
+      development of artificial intelligence. The people who built this technology
+      are telling us it could pose a civilizational risk. We believe the public
+      deserves an institution devoted to making sure that warning is heard,
+      understood, and acted upon.
+    </p>
+  </section>
+
+  <hr />
+
+  <section class="section">
+    <h2>The Warning</h2>
+    <blockquote class="statement-block">
+      <p>
+        &ldquo;Mitigating the risk of extinction from AI should be a global
+        priority alongside other societal-scale risks such as pandemics and
+        nuclear war.&rdquo;
+      </p>
+      <footer>
+        <strong>Statement on AI Risk</strong> &mdash; Center for AI Safety, May 2023.
+        Signed by Geoffrey Hinton, Yoshua Bengio, Sam Altman, Demis Hassabis,
+        Dario Amodei, and over 350 leading AI researchers, executives, and
+        public figures.
+      </footer>
+    </blockquote>
+  </section>
+
+  <section class="section">
+    <h2>In Their Own Words</h2>
+
+    <div class="quotes-grid">
+      <blockquote class="quote-card">
+        <p>
+          &ldquo;We have no experience of what it&rsquo;s like to have things
+          smarter than us. &hellip; We&rsquo;re entering a period of great
+          uncertainty, where we&rsquo;re dealing with things we&rsquo;ve never
+          dealt with before.&rdquo;
+        </p>
+        <footer>
+          <strong>Geoffrey Hinton</strong> &mdash; Nobel Laureate in Physics (2024),
+          often called the &ldquo;Godfather of AI.&rdquo; Resigned from Google in
+          2023 to speak freely about the dangers of the technology he helped create.
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <p>
+          &ldquo;It is difficult to go against your own church, but if you think
+          rationally about things, there&rsquo;s no way to deny the possibility
+          of catastrophic outcomes. &hellip; It was thinking about my children and
+          their future that made me decide I had to act differently.&rdquo;
+        </p>
+        <footer>
+          <strong>Yoshua Bengio</strong> &mdash; Turing Award recipient,
+          most-cited living computer scientist. Chair of the International AI
+          Safety Report.
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <p>
+          &ldquo;There is also a longer-term existential threat that will arise
+          when we create digital beings that are more intelligent than ourselves.
+          We have no idea whether we can stay in control.&rdquo;
+        </p>
+        <footer>
+          <strong>Geoffrey Hinton</strong> &mdash; Nobel Prize banquet speech,
+          Stockholm, December 2024.
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <p>
+          &ldquo;We don&rsquo;t have methods to make sure that these systems will
+          not harm people or will not turn against people. We don&rsquo;t know how
+          to do that.&rdquo;
+        </p>
+        <footer>
+          <strong>Yoshua Bengio</strong> &mdash; CNBC interview, November 2024.
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="section signatories-section">
+    <p class="signatories-label">Among those who have publicly warned of catastrophic AI risk</p>
+    <p class="signatories-names">
+      Geoffrey Hinton &#xB7;
+      Yoshua Bengio &#xB7;
+      Stuart Russell &#xB7;
+      Demis Hassabis &#xB7;
+      Sam Altman &#xB7;
+      Dario Amodei &#xB7;
+      Bill Gates &#xB7;
+      Ilya Sutskever &#xB7;
+      Dawn Song &#xB7;
+      Daniel Kahneman &#xB7;
+      Daniel Dennett &#xB7;
+      Yuval Noah Harari
+    </p>
   </section>
 
   <hr />
@@ -13,25 +116,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section">
     <h2>Our Mission</h2>
     <p>
-      Craft beer meditation selvage, dreamcatcher sustainable artisan direct trade
-      chambray pop-up. We're committed to ensuring artificial intelligence systems
-      are developed responsibly, with robust safeguards that protect humanity's
-      long-term interests.
+      The Canary Institute is an independent, non-partisan, not-for-profit
+      organization dedicated to ensuring that the development of advanced
+      artificial intelligence proceeds safely and in the public interest. We
+      exist because the gap between what AI researchers know and what the public
+      understands has grown too wide, and the gap between what policymakers need
+      and what they receive has grown too dangerous.
     </p>
     <p>
-      Typewriter aesthetic pork belly, vexillologist next level brunch pour-over
-      ethical. Our interdisciplinary team bridges the gap between technical AI
-      research and the policy frameworks needed to govern it.
+      We are not opposed to artificial intelligence. We are opposed to
+      negligence. When the people building the aircraft say the wings might come
+      off, it is not alarmism to call for an inspection. It is common sense.
     </p>
   </section>
 
   <section class="section">
     <h2>What We Do</h2>
     <p>
-      Normcore fixie thundercats, iceland heirloom literally pug selvage cornhole
-      chicharrones. We publish peer-reviewed research, advise policymakers, and
-      build tools that make AI systems more transparent, interpretable, and aligned
-      with human values.
+      Our work spans three domains: rigorous technical and economic analysis of
+      AI capabilities and risks; public communication that makes complex safety
+      arguments accessible without distortion; and policy advocacy grounded in
+      evidence rather than ideology. We serve no corporate interest. We take no
+      position on partisan questions. Our sole commitment is to ensuring that
+      humanity retains meaningful control over the most powerful technology it has
+      ever created.
     </p>
   </section>
 </BaseLayout>
@@ -45,5 +153,97 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero h1 {
     font-size: 2.75rem;
     margin-bottom: 0.5rem;
+  }
+
+  .hero-intro {
+    max-width: 38em;
+    margin: 1.5rem auto 0;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--color-grey);
+  }
+
+  /* Statement block */
+  .statement-block {
+    border-left: 3px solid var(--color-accent);
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    background: #f4f4f2;
+  }
+
+  .statement-block p {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .statement-block footer {
+    font-size: 0.85rem;
+    color: var(--color-light-grey);
+    line-height: 1.6;
+  }
+
+  .statement-block footer strong {
+    color: var(--color-dark);
+  }
+
+  /* Quote cards */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 600px) {
+    .quotes-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .quote-card {
+    border: 1px solid var(--color-border);
+    padding: 1.5rem 1.75rem;
+    position: relative;
+  }
+
+  .quote-card p {
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .quote-card footer {
+    font-size: 0.8rem;
+    color: var(--color-light-grey);
+    line-height: 1.6;
+  }
+
+  .quote-card footer strong {
+    color: var(--color-accent);
+  }
+
+  /* Signatories */
+  .signatories-section {
+    text-align: center;
+  }
+
+  .signatories-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-light-grey);
+    margin-bottom: 0.75rem;
+  }
+
+  .signatories-names {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    line-height: 2;
   }
 </style>
