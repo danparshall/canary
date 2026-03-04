@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="144" viewBox="0 0 252 144">
+  <!-- 3.5" x 2" at 72dpi = 252 x 144 -->
+  <defs>
+    <style>
+      .name { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; font-weight:700; font-size:9.5px; fill:#1A2A28; }
+      .title { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; font-weight:400; font-size:7.5px; fill:#527872; }
+      .contact { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; font-weight:400; font-size:7px; fill:#1A2A28; }
+      .contact-url { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; font-weight:400; font-size:7px; fill:#527872; }
+      /* Logo classes from original */
+      .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; }
+      .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; }
+      .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; letter-spacing:3px; font-weight:400; font-size:33px; }
+    </style>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="252" height="144" fill="#FFFFFF"/>
+
+  <!-- Top accent line -->
+  <line x1="0" y1="1.5" x2="252" y2="1.5" stroke="#1A4A44" stroke-width="3"/>
+
+  <!-- === LOGO (scaled from updated 900x340 original) === -->
+  <g transform="translate(29, -2) scale(0.28)">
+    <!-- Cartouche -->
+    <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+    <!-- CANARY -->
+    <text x="82" y="122" text-anchor="middle" class="wm-l" font-size="88px">C</text>
+    <text x="150" y="122" text-anchor="middle" class="cl-l" font-size="88px">A</text>
+    <text x="192" y="122" class="wm-l" font-size="88px" letter-spacing="4">NARY</text>
+    <!-- INSTITUTE -->
+    <text x="150" y="205" text-anchor="middle" class="cl-l" font-size="88px">I</text>
+    <text x="192" y="205" class="wm-l" font-size="88px" letter-spacing="4">NSTITUTE</text>
+    <!-- Rule -->
+    <line x1="50" y1="242" x2="650" y2="242" stroke="#1A4A44" stroke-width="3"/>
+    <!-- Tagline -->
+    <text x="364" y="282" text-anchor="middle" class="tl-l" font-size="33px">FOR AI POLICY</text>
+  </g>
+
+  <!-- Separator line -->
+  <!--
+  <line x1="14" y1="85" x2="238" y2="85" stroke="#527872" stroke-width="0.5"/>
+  -->
+  <!-- Name -->
+  <text x="14" y="100" class="name">Daniel Parshall, Ph.D.</text>
+
+  <!-- Title -->
+  <text x="14" y="110" class="title">AI Research &amp; Policy</text>
+
+  <!-- Email -->
+  <text x="14" y="126" class="contact">dan@canaryinstitute.ai</text>
+
+  <!-- Website -->
+  <!--
+  <text x="14" y="134" class="contact-url">https://canaryinstitute.ai</text>
+-->
+
+  <!-- QR Code placeholder (replace with actual QR image or regenerate in final PDF) -->
+  <rect x="198" y="91" width="44" height="44" fill="#FFFFFF" stroke="#1A4A44" stroke-width="0.5"/>
+  <text x="220" y="118" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="5" fill="#527872">QR CODE</text>
+  <text x="220" y="125" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="4" fill="#527872">(in final PDF)</text>
+
+</svg>
