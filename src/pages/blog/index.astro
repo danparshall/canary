@@ -4,42 +4,83 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const allPosts = await Astro.glob('./*.md');
 const posts = allPosts
   .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+// Group by area
+const alignmentPosts = posts.filter(p => p.frontmatter.area === 'alignment');
+const econPosts = posts.filter(p => p.frontmatter.area === 'economic-impacts');
+const generalPosts = posts.filter(p => !p.frontmatter.area);
 ---
 
-<BaseLayout title="Blog | The Canary Institute" description="Public-facing analysis and commentary from The Canary Institute on AI safety, capabilities, and policy.">
+<BaseLayout title="Blog | The Canary Institute" description="Public-facing summaries of our research on AI alignment and economic impacts, written for a general audience.">
   <h1>Blog</h1>
 
   <section class="section">
     <p class="blog-intro">
-      For each technical paper we publish, we write a corresponding post here
-      that makes the key findings accessible to a general audience. We also
-      publish commentary on developments in AI capabilities, safety research,
-      and governance as events warrant.
+      Every technical paper we publish gets a corresponding post here, written
+      for people who don't read arxiv for fun. If the research matters, the
+      explanation should be accessible.
     </p>
   </section>
 
-  {posts.length > 0 ? (
-    <section class="section">
-      <div class="posts-list">
-        {posts.map((post) => (
-          <article class="post-preview">
-            <p class="post-date">
+  <hr />
+
+  <!-- ── TABLE OF CONTENTS ── -->
+  <section class="section">
+
+    {alignmentPosts.length > 0 && (
+      <div class="toc-group">
+        <h2 class="toc-heading">Alignment &amp; Control</h2>
+        <ul class="toc">
+          {alignmentPosts.map((post) => (
+            <li class="toc-entry">
               <time datetime={post.frontmatter.date}>
-                {new Date(post.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {new Date(post.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </time>
-              {post.frontmatter.paper && <span class="paper-badge">Accompanies paper</span>}
-            </p>
-            <h2><a href={post.url}>{post.frontmatter.title}</a></h2>
-            {post.frontmatter.description && <p class="post-excerpt">{post.frontmatter.description}</p>}
-          </article>
-        ))}
+              <a href={post.url}>{post.frontmatter.title}</a>
+              {post.frontmatter.paper && <span class="paper-badge">paper</span>}
+            </li>
+          ))}
+        </ul>
       </div>
-    </section>
-  ) : (
-    <section class="section">
-      <p>Posts are in preparation. Check back soon.</p>
-    </section>
-  )}
+    )}
+
+    {econPosts.length > 0 && (
+      <div class="toc-group">
+        <h2 class="toc-heading">Economic Impacts</h2>
+        <ul class="toc">
+          {econPosts.map((post) => (
+            <li class="toc-entry">
+              <time datetime={post.frontmatter.date}>
+                {new Date(post.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+              <a href={post.url}>{post.frontmatter.title}</a>
+              {post.frontmatter.paper && <span class="paper-badge">paper</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {generalPosts.length > 0 && (
+      <div class="toc-group">
+        <h2 class="toc-heading">General</h2>
+        <ul class="toc">
+          {generalPosts.map((post) => (
+            <li class="toc-entry">
+              <time datetime={post.frontmatter.date}>
+                {new Date(post.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {posts.length === 0 && (
+      <p class="forthcoming">Posts are in preparation. Check back soon.</p>
+    )}
+  </section>
 </BaseLayout>
 
 <style>
@@ -49,59 +90,76 @@ const posts = allPosts
     max-width: 38em;
   }
 
-  .posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .toc-group {
+    margin-bottom: 2.5rem;
   }
 
-  .post-preview {
-    padding: 1.75rem 0;
+  .toc-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .post-preview:first-child {
-    border-top: 1px solid var(--color-border);
+  .toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  .post-date {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-light-grey);
-    margin-bottom: 0.4rem;
+  .toc-entry {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0efed;
+    line-height: 1.5;
   }
 
-  .paper-badge {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    border: 1px solid var(--color-accent);
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
+  .toc-entry time {
+    flex-shrink: 0;
+    width: 7.5rem;
+    font-size: 0.78rem;
+    color: var(--color-light-grey);
+    letter-spacing: 0.02em;
   }
 
-  .post-preview h2 {
-    font-size: 1.35rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .post-preview h2 a {
+  .toc-entry a {
+    font-family: var(--font-heading);
+    font-size: 1rem;
     color: var(--color-dark);
     text-decoration: none;
   }
 
-  .post-preview h2 a:hover {
+  .toc-entry a:hover {
     color: var(--color-accent);
   }
 
-  .post-excerpt {
-    font-size: 0.92rem;
-    line-height: 1.7;
-    margin-bottom: 0;
+  .paper-badge {
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    padding: 0.1rem 0.45rem;
+    border-radius: 2px;
+    margin-left: 0.25rem;
+  }
+
+  .forthcoming {
+    font-style: italic;
+    color: var(--color-light-grey);
+  }
+
+  @media (max-width: 500px) {
+    .toc-entry {
+      flex-wrap: wrap;
+    }
+
+    .toc-entry time {
+      width: 100%;
+      margin-bottom: -0.2rem;
+    }
   }
 </style>
