@@ -3,44 +3,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
 
-// Papers are listed here as data. Each entry becomes a row on the page.
-// When a paper is published, add it here and create the corresponding blog post.
-// `blog` should match the markdown filename in src/pages/blog/ (without .md).
-// `pdf` is optional — link to the actual paper when available.
-// `status` is "published" | "forthcoming".
+// ─── PAPER DATA MODEL ───
+// To add a paper:
+//   1. Drop the PDF into public/papers/
+//   2. Drop the blog post .md into src/pages/blog/
+//   3. Add an entry below
+//
+// Fields:
+//   title    — paper title as it appears on arxiv
+//   arxiv    — full arxiv URL (e.g. "https://arxiv.org/abs/2406.12345")
+//   pdf      — local copy path relative to site root (e.g. "/papers/my-paper.pdf")
+//   blog     — slug of the corresponding blog post (filename without .md)
+//   date     — publication date (YYYY-MM-DD)
+//   description — one-line plain-English summary for the research page
 
-const alignmentPapers: Array<{
+interface Paper {
   title: string;
-  blog?: string;
+  arxiv?: string;
   pdf?: string;
+  blog?: string;
   date?: string;
-  status: string;
   description: string;
-}> = [
+}
+
+const alignmentPapers: Paper[] = [
   // {
-  //   title: "Example: Measuring Autonomous Capabilities in Frontier Models",
-  //   blog: "measuring-autonomous-capabilities",
+  //   title: "Measuring Autonomous Capabilities in Frontier Models",
+  //   arxiv: "https://arxiv.org/abs/2406.XXXXX",
   //   pdf: "/papers/measuring-autonomous-capabilities.pdf",
+  //   blog: "measuring-autonomous-capabilities",
   //   date: "2026-04-15",
-  //   status: "published",
   //   description: "An evaluation framework for assessing how close frontier AI systems are to autonomous operation across safety-critical domains.",
   // },
 ];
 
-const econPapers: Array<{
-  title: string;
-  blog?: string;
-  pdf?: string;
-  date?: string;
-  status: string;
-  description: string;
-}> = [
+const econPapers: Paper[] = [
   // {
-  //   title: "Example: Near-Term Labor Market Effects of AI-Driven Automation",
-  //   blog: "labor-market-effects",
+  //   title: "Near-Term Labor Market Effects of AI-Driven Automation",
+  //   arxiv: "https://arxiv.org/abs/2406.YYYYY",
   //   pdf: "/papers/labor-market-effects.pdf",
+  //   blog: "labor-market-effects",
   //   date: "2026-05-01",
-  //   status: "published",
   //   description: "Modeling which sectors and occupations face the most immediate displacement risk, and what that means for policy.",
   // },
 ];
@@ -64,9 +67,7 @@ const econPapers: Array<{
 
   <!-- ── ALIGNMENT ── -->
   <section class="section">
-    <div class="area-header">
-      <h2>Alignment &amp; Control</h2>
-    </div>
+    <h2>Alignment &amp; Control</h2>
     <p>
       Can we keep AI systems pointed in the right direction as they become more
       capable? This program tracks the state of alignment research, evaluates
@@ -82,16 +83,13 @@ const econPapers: Array<{
         <h3>Papers</h3>
         {alignmentPapers.map((p) => (
           <div class="paper-row">
-            <div class="paper-info">
-              <p class="paper-title">
-                {p.pdf ? <a href={p.pdf}>{p.title}</a> : p.title}
-              </p>
-              <p class="paper-desc">{p.description}</p>
-            </div>
+            <p class="paper-title">{p.title}</p>
+            <p class="paper-desc">{p.description}</p>
             <div class="paper-links">
               {p.date && <span class="paper-date">{p.date}</span>}
-              {p.blog && <a href={`${base}blog/${p.blog}/`} class="blog-link">Blog post &rarr;</a>}
-              {p.pdf && <a href={p.pdf} class="pdf-link">PDF</a>}
+              {p.blog && <a href={`${base}blog/${p.blog}/`} class="link-blog">Blog post &rarr;</a>}
+              {p.arxiv && <a href={p.arxiv} class="link-arxiv" target="_blank" rel="noopener">arXiv</a>}
+              {p.pdf && <a href={`${base}${p.pdf}`} class="link-pdf">PDF</a>}
             </div>
           </div>
         ))}
@@ -105,9 +103,7 @@ const econPapers: Array<{
 
   <!-- ── ECONOMIC IMPACTS ── -->
   <section class="section">
-    <div class="area-header">
-      <h2>Economic Impacts</h2>
-    </div>
+    <h2>Economic Impacts</h2>
     <p>
       What happens to jobs, wages, and the distribution of wealth as AI
       capabilities accelerate? This program models the near- and medium-term
@@ -123,16 +119,13 @@ const econPapers: Array<{
         <h3>Papers</h3>
         {econPapers.map((p) => (
           <div class="paper-row">
-            <div class="paper-info">
-              <p class="paper-title">
-                {p.pdf ? <a href={p.pdf}>{p.title}</a> : p.title}
-              </p>
-              <p class="paper-desc">{p.description}</p>
-            </div>
+            <p class="paper-title">{p.title}</p>
+            <p class="paper-desc">{p.description}</p>
             <div class="paper-links">
               {p.date && <span class="paper-date">{p.date}</span>}
-              {p.blog && <a href={`${base}blog/${p.blog}/`} class="blog-link">Blog post &rarr;</a>}
-              {p.pdf && <a href={p.pdf} class="pdf-link">PDF</a>}
+              {p.blog && <a href={`${base}blog/${p.blog}/`} class="link-blog">Blog post &rarr;</a>}
+              {p.arxiv && <a href={p.arxiv} class="link-arxiv" target="_blank" rel="noopener">arXiv</a>}
+              {p.pdf && <a href={`${base}${p.pdf}`} class="link-pdf">PDF</a>}
             </div>
           </div>
         ))}
@@ -144,10 +137,6 @@ const econPapers: Array<{
 </BaseLayout>
 
 <style>
-  .area-header h2 {
-    margin-bottom: 1rem;
-  }
-
   .paper-list {
     margin-top: 2rem;
   }
@@ -176,15 +165,6 @@ const econPapers: Array<{
     margin-bottom: 0.3rem;
   }
 
-  .paper-title a {
-    color: var(--color-dark);
-    text-decoration: none;
-  }
-
-  .paper-title a:hover {
-    color: var(--color-accent);
-  }
-
   .paper-desc {
     font-size: 0.88rem;
     line-height: 1.65;
@@ -195,8 +175,9 @@ const econPapers: Array<{
   .paper-links {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
     margin-top: 0.4rem;
+    flex-wrap: wrap;
   }
 
   .paper-date {
@@ -205,18 +186,19 @@ const econPapers: Array<{
     letter-spacing: 0.04em;
   }
 
-  .blog-link {
+  .link-blog {
     font-size: 0.8rem;
     color: var(--color-accent);
     text-decoration: none;
     font-weight: 500;
   }
 
-  .blog-link:hover {
+  .link-blog:hover {
     text-decoration: underline;
   }
 
-  .pdf-link {
+  .link-arxiv,
+  .link-pdf {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -226,7 +208,8 @@ const econPapers: Array<{
     text-decoration: none;
   }
 
-  .pdf-link:hover {
+  .link-arxiv:hover,
+  .link-pdf:hover {
     color: var(--color-dark);
     border-color: var(--color-dark);
   }
