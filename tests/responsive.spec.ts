@@ -6,7 +6,7 @@ const viewports = [
   { name: 'desktop', width: 1280, height: 800 },
 ];
 
-const pages = ['./', 'about/', 'research/', 'policy/'];
+const pages = ['./', 'about/', 'research/', 'policy/', 'blog/'];
 
 for (const viewport of viewports) {
   for (const path of pages) {
