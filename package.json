@@ -1,0 +1,24 @@
+{
+  "name": "canary-institute",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@axe-core/playwright": "^4.11.1",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3",
+    "typescript": "^5.9.3"
+  }
+}
