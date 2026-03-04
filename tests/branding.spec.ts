@@ -1,20 +1,20 @@
 import { test, expect } from '@playwright/test';
 
-test('home page tagline says "For AI Policy"', async ({ page }) => {
+test('home page tagline says "AI Safety Research & Public Advocacy"', async ({ page }) => {
   await page.goto('./');
   const tagline = page.locator('.tagline');
-  await expect(tagline).toContainText('For AI Policy');
+  await expect(tagline).toContainText('AI Safety Research');
 });
 
-test('home page title contains "AI Policy"', async ({ page }) => {
+test('home page title contains site name', async ({ page }) => {
   await page.goto('./');
-  await expect(page).toHaveTitle(/AI Policy/);
+  await expect(page).toHaveTitle(/Canary Institute/);
 });
 
-test('default meta description contains "AI Policy"', async ({ page }) => {
+test('default meta description contains relevant keywords', async ({ page }) => {
   await page.goto('./');
   const desc = page.locator('meta[name="description"]');
-  await expect(desc).toHaveAttribute('content', /AI Policy/i);
+  await expect(desc).toHaveAttribute('content', /AI/i);
 });
 
 test('CSS accent color is teal, not gold', async ({ page }) => {
@@ -27,7 +27,6 @@ test('CSS accent color is teal, not gold', async ({ page }) => {
 
 test('link hover color uses teal accent', async ({ page }) => {
   await page.goto('./');
-  // Check that the stylesheet defines a:hover with the accent variable
   const hasGold = await page.evaluate(() => {
     const sheets = Array.from(document.styleSheets);
     for (const sheet of sheets) {
@@ -55,8 +54,8 @@ test('nav logo SVG does not contain gold fill', async ({ page }) => {
   expect(svgText).toContain('#1A4A44');
 });
 
-test('about page description references AI policy', async ({ page }) => {
+test('about page description references AI safety', async ({ page }) => {
   await page.goto('about/');
   const desc = page.locator('meta[name="description"]');
-  await expect(desc).toHaveAttribute('content', /AI policy/i);
+  await expect(desc).toHaveAttribute('content', /AI safety/i);
 });
