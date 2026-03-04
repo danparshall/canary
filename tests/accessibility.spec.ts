@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const pages = ['./', 'about/', 'research/', 'policy/'];
+const pages = ['./', 'about/', 'research/', 'policy/', 'blog/'];
 
 for (const path of pages) {
   const label = path === './' ? '/' : `/${path}`;
