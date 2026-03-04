@@ -5,6 +5,7 @@ const pages = [
   { path: 'about/', name: 'About' },
   { path: 'research/', name: 'Research' },
   { path: 'policy/', name: 'Policy' },
+  { path: 'blog/', name: 'Blog' },
 ];
 
 test('home page loads and has correct title', async ({ page }) => {
