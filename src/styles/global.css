@@ -2,8 +2,8 @@
 :root {
   --color-dark: #1A2A28;
   --color-accent: #1A4A44;
-  --color-grey: #4A4A4A;
-  --color-light-grey: #527872;
+  --color-grey: #363636;
+  --color-light-grey: #436058;
   --color-bg: #FAFAF8;
   --color-white: #fff;
   --color-border: #e5e5e3;
@@ -24,8 +24,6 @@
 
 html {
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -38,7 +36,7 @@ body {
 /* Typography */
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.3;
 }
 
