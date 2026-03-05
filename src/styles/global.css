@@ -9,10 +9,11 @@
   --color-border: #e5e5e3;
 
   --font-heading: 'Cinzel', 'Times New Roman', serif;
-  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+  --font-ui: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --max-width: 800px;
-  --nav-height: 4rem;
+  --nav-height: 5.5rem;
 }
 
 /* Reset */
@@ -84,7 +85,7 @@ main {
 
 /* Utilities */
 .tagline {
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   font-size: 0.875rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
