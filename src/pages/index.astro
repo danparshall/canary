@@ -169,7 +169,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .hero-logo {
-    height: 19.2rem;
+    height: clamp(10rem, 40vw, 19.2rem);
     width: auto;
   }
 
@@ -285,3 +285,4 @@ const base = import.meta.env.BASE_URL;
     text-decoration: underline;
   }
 </style>
+
