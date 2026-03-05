@@ -101,3 +101,4 @@ I believe the corrigibility problem is a governance problem, and governance has 
 ---
 
 *Daniel Parshall, Ph.D., is a former physicist and data scientist working on AI policy. He can be reached at dan@canaryinstitute.ai*
+
