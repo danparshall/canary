@@ -5,9 +5,7 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="The Canary Institute | AI Safety Research & Policy">
   <section class="hero">
-    <img src={`${base}canary_base.svg`} alt="" class="hero-logo" />
-    <h1>The Canary Institute</h1>
-    <p class="tagline">AI Safety Research &amp; Public Advocacy</p>
+    <img src={`${base}canary_base.svg`} alt="The Canary Institute — AI Safety Research & Public Advocacy" class="hero-logo" />
     <p class="hero-intro">
       Independent, non-partisan research and public advocacy for the safe
       development of artificial intelligence. The people who built this technology
@@ -153,19 +151,14 @@ const base = import.meta.env.BASE_URL;
   }
 
   .hero-logo {
-    height: 8rem;
+    height: 16rem;
     width: auto;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: 2.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   .hero-intro {
     max-width: 38em;
-    margin: 1.5rem auto 0;
+    margin: 0 auto;
     font-size: 1rem;
     line-height: 1.85;
     color: var(--color-grey);
