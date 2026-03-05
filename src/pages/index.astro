@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="The Canary Institute | AI Safety Research & Policy">
   <section class="hero">
+    <img src={`${base}canary_base.svg`} alt="" class="hero-logo" />
     <h1>The Canary Institute</h1>
     <p class="tagline">AI Safety Research &amp; Public Advocacy</p>
     <p class="hero-intro">
@@ -148,6 +150,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero {
     text-align: center;
     padding: 3rem 0 2rem;
+  }
+
+  .hero-logo {
+    height: 8rem;
+    width: auto;
+    margin-bottom: 1.5rem;
   }
 
   .hero h1 {
