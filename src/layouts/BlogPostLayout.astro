@@ -6,6 +6,7 @@ interface Props {
     title: string;
     description?: string;
     date: string;
+    updated?: string;
     author?: string;
     paper?: string;
     area?: 'alignment' | 'economic-impacts';
@@ -21,16 +22,18 @@ const areaLabels: Record<string, string> = {
 };
 
 const areaLabel = frontmatter.area ? areaLabels[frontmatter.area] : null;
+
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <BaseLayout title={`${frontmatter.title} | The Canary Institute`} description={frontmatter.description}>
   <article class="blog-post">
     <header class="post-header">
-      <p class="post-meta">
+      <div class="post-meta">
         {areaLabel && <span class="area-tag">{areaLabel}</span>}
-        <time datetime={frontmatter.date}>{new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-        {frontmatter.author && <span> &middot; {frontmatter.author}</span>}
-      </p>
+        {frontmatter.author && <span class="post-author">{frontmatter.author}</span>}
+      </div>
       <h1>{frontmatter.title}</h1>
       {frontmatter.description && <p class="post-description">{frontmatter.description}</p>}
       {frontmatter.paper && (
@@ -50,6 +53,14 @@ const areaLabel = frontmatter.area ? areaLabels[frontmatter.area] : null;
     <hr />
 
     <footer class="post-footer">
+      <p class="post-dates">
+        Originally posted on <time datetime={frontmatter.date}>{formatDate(frontmatter.date)}</time>
+        {frontmatter.updated && (
+          <span>
+            &ensp;&middot;&ensp;Last updated on <time datetime={frontmatter.updated}>{formatDate(frontmatter.updated)}</time>
+          </span>
+        )}
+      </p>
       <a href={`${base}blog/`}>&larr; Back to all posts</a>
     </footer>
   </article>
@@ -70,6 +81,10 @@ const areaLabel = frontmatter.area ? areaLabels[frontmatter.area] : null;
     align-items: center;
     gap: 0.6rem;
     flex-wrap: wrap;
+  }
+
+  .post-author {
+    font-family: var(--font-ui, var(--font-body));
   }
 
   .area-tag {
@@ -130,6 +145,12 @@ const areaLabel = frontmatter.area ? areaLabels[frontmatter.area] : null;
 
   .post-footer {
     padding-top: 1rem;
+  }
+
+  .post-dates {
+    font-size: 0.8rem;
+    color: var(--color-light-grey);
+    margin-bottom: 1rem;
   }
 
   .post-footer a {
