@@ -9,11 +9,11 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <p class="hero-intro">
-    Independent, non-partisan research and public advocacy for the safe
-    development of artificial intelligence. The people who built this technology
-    are telling us it could pose a civilizational risk. We believe the public
-    deserves an institution devoted to making sure that warning is heard,
-    understood, and acted upon.
+    Artificial intelligence is predicted to cause vast disruption to the global
+    economy, with both transformative benefits and serious risks. The people who
+    built this technology are warning that without deliberate intervention, the
+    negative consequences could be severe and irreversible. The Canary Institute
+    exists to make sure those warnings are heard, understood, and acted upon.
   </p>
 
   <hr />
@@ -143,6 +143,23 @@ const base = import.meta.env.BASE_URL;
       ever created.
     </p>
   </section>
+
+  <hr />
+
+  <section class="section briefings-section">
+    <h2>Technical Briefings</h2>
+    <p>
+      We are available to provide technical briefings on AI capabilities,
+      alignment research, and economic impact projections to policymakers,
+      journalists, congressional staff, and other stakeholders. Briefings are
+      offered at no cost and can be tailored to your level of technical
+      background.
+    </p>
+    <p class="briefings-contact">
+      To request a briefing, contact us at
+      <a href="mailto:briefings@canaryinstitute.ai">briefings@canaryinstitute.ai</a>
+    </p>
+  </section>
 </BaseLayout>
 
 <style>
@@ -245,5 +262,26 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.9rem;
     color: var(--color-grey);
     line-height: 2;
+  }
+
+  /* Technical Briefings */
+  .briefings-section {
+    border: 1px solid var(--color-border);
+    padding: 2rem 2rem 1.5rem;
+    background: #f4f4f2;
+  }
+
+  .briefings-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .briefings-contact {
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  .briefings-contact a {
+    color: var(--color-accent);
+    text-decoration: underline;
   }
 </style>
