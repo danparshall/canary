@@ -61,13 +61,16 @@ const figureUrl = `${base}images/task-exposure-figure1.png`;
 
       <div class="col-figure">
         <figure>
-          <img
-            src={figureUrl}
-            alt="Figure 1: The Expanding Wavefront — a heatmap showing economy-weighted labor time by cognitive complexity (C0–C4) and deployment difficulty (D0–D4), with three dashed rectangles representing the 2023, 2026, and projected 2030 automation wavefronts."
-            width="560"
-            height="560"
-            loading="eager"
-          />
+          <a href={figureUrl} class="figure-link" data-lightbox>
+            <img
+              src={figureUrl}
+              alt="Figure 1: The Expanding Wavefront — a heatmap showing economy-weighted labor time by cognitive complexity (C0–C4) and deployment difficulty (D0–D4), with three dashed rectangles representing the 2023, 2026, and projected 2030 automation wavefronts."
+              width="560"
+              height="560"
+              loading="eager"
+            />
+            <span class="enlarge-hint">Click to enlarge</span>
+          </a>
           <figcaption>
             <strong>Figure 1.</strong> The Expanding Wavefront: Economy-Weighted
             Labor Time by C &times; D (R&nbsp;&lt;&nbsp;2). Each cell shows the
@@ -78,6 +81,11 @@ const figureUrl = `${base}images/task-exposure-figure1.png`;
           </figcaption>
         </figure>
       </div>
+    </div>
+
+    <div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged figure">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src={figureUrl} alt="Figure 1: The Expanding Wavefront (enlarged)" />
     </div>
 
     <hr />
@@ -113,6 +121,10 @@ const figureUrl = `${base}images/task-exposure-figure1.png`;
 </BaseLayout>
 
 <style>
+  :global(.container) {
+    max-width: 1100px;
+  }
+
   .paper-abstract {
     max-width: 100%;
   }
@@ -234,6 +246,68 @@ const figureUrl = `${base}images/task-exposure-figure1.png`;
     color: var(--color-accent);
   }
 
+  .figure-link {
+    display: block;
+    position: relative;
+    cursor: zoom-in;
+    text-decoration: none;
+  }
+
+  .enlarge-hint {
+    display: block;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-light-grey);
+    margin-top: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .figure-link:hover .enlarge-hint {
+    color: var(--color-accent);
+  }
+
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.5rem;
+  }
+
+  .lightbox-close:hover {
+    opacity: 0.7;
+  }
+
   @media (max-width: 768px) {
     .two-col {
       grid-template-columns: 1fr;
@@ -249,3 +323,29 @@ const figureUrl = `${base}images/task-exposure-figure1.png`;
     }
   }
 </style>
+
+<script>
+  const lightbox = document.getElementById('lightbox')!;
+  const trigger = document.querySelector('[data-lightbox]')!;
+  const closeBtn = lightbox.querySelector('.lightbox-close')!;
+
+  function open(e: Event) {
+    e.preventDefault();
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function close() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+
+  trigger.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>
