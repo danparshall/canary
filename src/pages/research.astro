@@ -22,6 +22,7 @@ interface Paper {
   arxiv?: string;
   pdf?: string;
   blog?: string;
+  abstract?: string;
   date?: string;
   description: string;
 }
@@ -37,14 +38,13 @@ const alignmentPapers: Paper[] = [
 ];
 
 const econPapers: Paper[] = [
-  // {
-  //   title: "Near-Term Labor Market Effects of AI-Driven Automation",
-  //   arxiv: "https://arxiv.org/abs/2406.YYYYY",
-  //   pdf: "/papers/labor-market-effects.pdf",
-  //   blog: "labor-market-effects",
-  //   date: "2026-05-01",
-  //   description: "Modeling which sectors and occupations face the most immediate displacement risk, and what that means for policy.",
-  // },
+  {
+    title: "Measuring AI's Economic Reach: A Multi-Dimensional Task Taxonomy",
+    pdf: "papers/Parshall_Lopez-Luzuriaga_TaskExposure_2026.pdf",
+    abstract: "research/task-exposure",
+    date: "2026-03-19",
+    description: "A three-axis taxonomy (CDR) separating cognitive complexity, deployment difficulty, and regulatory restrictions to measure where AI's economic impact will land first.",
+  },
 ];
 ---
 
@@ -82,10 +82,13 @@ const econPapers: Paper[] = [
         <h3>Papers</h3>
         {alignmentPapers.map((p) => (
           <div class="paper-row">
-            <p class="paper-title">{p.title}</p>
+            <p class="paper-title">
+              {p.abstract ? <a href={`${base}${p.abstract}/`}>{p.title}</a> : p.title}
+            </p>
             <p class="paper-desc">{p.description}</p>
             <div class="paper-links">
               {p.date && <span class="paper-date">{p.date}</span>}
+              {p.abstract && <a href={`${base}${p.abstract}/`} class="link-blog">Abstract &rarr;</a>}
               {p.blog && <a href={`${base}blog/${p.blog}/`} class="link-blog">Blog post &rarr;</a>}
               {p.arxiv && <a href={p.arxiv} class="link-arxiv" target="_blank" rel="noopener">arXiv</a>}
               {p.pdf && <a href={`${base}${p.pdf}`} class="link-pdf">PDF</a>}
@@ -118,10 +121,13 @@ const econPapers: Paper[] = [
         <h3>Papers</h3>
         {econPapers.map((p) => (
           <div class="paper-row">
-            <p class="paper-title">{p.title}</p>
+            <p class="paper-title">
+              {p.abstract ? <a href={`${base}${p.abstract}/`}>{p.title}</a> : p.title}
+            </p>
             <p class="paper-desc">{p.description}</p>
             <div class="paper-links">
               {p.date && <span class="paper-date">{p.date}</span>}
+              {p.abstract && <a href={`${base}${p.abstract}/`} class="link-blog">Abstract &rarr;</a>}
               {p.blog && <a href={`${base}blog/${p.blog}/`} class="link-blog">Blog post &rarr;</a>}
               {p.arxiv && <a href={p.arxiv} class="link-arxiv" target="_blank" rel="noopener">arXiv</a>}
               {p.pdf && <a href={`${base}${p.pdf}`} class="link-pdf">PDF</a>}

@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const pdfUrl = `${base}papers/Parshall_Lopez-Luzuriaga_TaskExposure_2026.pdf`;
+const figureUrl = `${base}images/task-exposure-figure1.png`;
+---
+
+<BaseLayout
+  title="Measuring AI's Economic Reach | The Canary Institute"
+  description="A three-axis ordinal taxonomy (CDR) for measuring AI task exposure across cognitive complexity, deployment difficulty, and regulatory restrictions."
+>
+  <article class="paper-abstract">
+    <h1>Measuring AI's Economic Reach: A Multi-Dimensional Task Taxonomy</h1>
+
+    <p class="authors">
+      Daniel Parshall<sup>1</sup> &amp; Andrea Lopez-Luzuriaga<sup>2</sup>
+    </p>
+    <p class="affiliations">
+      <sup>1</sup>Canary Institute &nbsp;&middot;&nbsp;
+      <sup>2</sup>Center for Economic Research, George Washington University
+    </p>
+
+    <div class="two-col">
+      <div class="col-abstract">
+        <h2>Abstract</h2>
+        <p>
+          Existing frameworks for measuring AI's labor market exposure decompose
+          imperfectly across distinct dimensions: whether AI can perform a task,
+          whether deployment is physically feasible, and whether institutions
+          permit it. We propose CDR, a three-axis ordinal taxonomy that separates
+          these dimensions into Cognitive complexity (C0&ndash;C4), Deployment
+          difficulty (D0&ndash;D4), and Regulatory restrictions (R0&ndash;R4),
+          extending Autor's (2003) routine/non-routine &times; cognitive/manual
+          framework into a finer-grained classification space suitable for
+          measuring AI exposure.
+        </p>
+        <p>
+          Applying CDR to the full O*NET task universe (23,850 task-activity
+          pairs across 923 occupations, classified via multi-model LLM consensus:
+          Claude Sonnet 4.6, GPT-5-mini, Gemini 3 Flash, validated against
+          flagship models), we find that 40.2% of U.S. economy-weighted labor
+          time falls in tasks that are within current AI cognitive reach
+          (C&le;2, up to and including contextual judgment), require no physical
+          infrastructure (D0), and face no professional or statutory regulatory
+          barrier (R&nbsp;&lt;&nbsp;2). An additional 19.6% of economy-weighted
+          labor time is blocked by professional standards (R2: 11.5%), statutory
+          regulation (R3: 8.0%), or moral agency requirements (R4: 0.1%).
+        </p>
+        <p>
+          Unlike exposure measures repurposed from other frameworks, which
+          conflate cognitive capability with deployment feasibility and
+          regulatory permissions, the CDR taxonomy was designed from the outset
+          to decompose these independent dimensions, avoiding the dimensional
+          conflation that produces disagreement across existing metrics. The
+          three axes are empirically separable and advance at different rates,
+          with implications for how capability, deployment, and regulatory
+          changes affect exposure estimates independently.
+        </p>
+      </div>
+
+      <div class="col-figure">
+        <figure>
+          <img
+            src={figureUrl}
+            alt="Figure 1: The Expanding Wavefront — a heatmap showing economy-weighted labor time by cognitive complexity (C0–C4) and deployment difficulty (D0–D4), with three dashed rectangles representing the 2023, 2026, and projected 2030 automation wavefronts."
+            width="560"
+            height="560"
+            loading="eager"
+          />
+          <figcaption>
+            <strong>Figure 1.</strong> The Expanding Wavefront: Economy-Weighted
+            Labor Time by C &times; D (R&nbsp;&lt;&nbsp;2). Each cell shows the
+            percentage of U.S. labor time at that combination of cognitive
+            complexity and deployment difficulty. Dashed rectangles show
+            expanding wavefronts: 2023 (16.2%), 2026 (50.5%), and projected
+            ~2030 (67.6%).
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="paper-links-section">
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li>
+          <a href={pdfUrl} class="resource-link">
+            <span class="resource-label">PDF</span>
+            <span>Full paper</span>
+          </a>
+        </li>
+        <li>
+          <span class="resource-link coming-soon">
+            <span class="resource-label">Code</span>
+            <span>Replication package <em>(coming soon)</em></span>
+          </span>
+        </li>
+        <li>
+          <span class="resource-link coming-soon">
+            <span class="resource-label">Blog</span>
+            <span>Popular audience discussion <em>(coming soon)</em></span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="back-link">
+      <a href={`${base}research/`}>&larr; All research</a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .paper-abstract {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .authors {
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .affiliations {
+    font-size: 0.85rem;
+    color: var(--color-light-grey);
+    margin-bottom: 2rem;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .col-abstract h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-ui);
+    color: var(--color-light-grey);
+    margin-bottom: 1rem;
+  }
+
+  .col-abstract p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .col-figure {
+    position: sticky;
+    top: 2rem;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+
+  figcaption {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--color-light-grey);
+    margin-top: 0.75rem;
+  }
+
+  .paper-links-section h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-ui);
+    color: var(--color-light-grey);
+    margin-bottom: 1rem;
+  }
+
+  .resource-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.92rem;
+    color: var(--color-dark);
+    text-decoration: none;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  a.resource-link:hover {
+    color: var(--color-accent);
+  }
+
+  .resource-link.coming-soon {
+    color: var(--color-light-grey);
+  }
+
+  .resource-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-border);
+    padding: 0.2rem 0.6rem;
+    min-width: 3.5rem;
+    text-align: center;
+  }
+
+  .back-link {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+  }
+
+  .back-link a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+
+    .col-figure {
+      position: static;
+      order: -1;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+</style>
