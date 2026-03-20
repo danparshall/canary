@@ -6,6 +6,7 @@ date: "2026-03-19"
 author: "Daniel Parshall, Ph.D."
 area: "economic-impacts"
 paper: "/papers/Parshall_Lopez-Luzuriaga_TaskExposure_2026.pdf"
+abstract: "/research/task-exposure/"
 ---
 
 How much of the economy is exposed to AI? Depends who you ask. Eloundou et al. say 80% of workers have at least some exposed tasks. Felten, Raj, and Seamans get a broadly similar but differently ranked list. When Gimbel et al. systematically compare seven leading metrics, they find the metrics agree that *something* is happening but disagree about *where* — and the disagreement is worst precisely among the occupations everyone cares about most.

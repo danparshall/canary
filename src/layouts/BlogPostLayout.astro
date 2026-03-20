@@ -9,6 +9,7 @@ interface Props {
     updated?: string;
     author?: string;
     paper?: string;
+    abstract?: string;
     area?: 'alignment' | 'economic-impacts';
   };
 }
@@ -39,7 +40,10 @@ const formatDate = (d: string) =>
       {frontmatter.paper && (
         <p class="post-paper-link">
           This post accompanies a technical paper:
-          <a href={frontmatter.paper}>{frontmatter.paper}</a>
+          {frontmatter.abstract
+            ? <><a href={frontmatter.abstract}>abstract & figures</a> · <a href={frontmatter.paper}>PDF</a></>
+            : <a href={frontmatter.paper}>{frontmatter.paper}</a>
+          }
         </p>
       )}
     </header>
