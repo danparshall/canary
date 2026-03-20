@@ -12,31 +12,19 @@ How much of the economy is exposed to AI? Depends who you ask. Eloundou et al. s
 
 We argue this isn't primarily a measurement problem. It's a dimensional one.
 
-## Three Dimensions, Three Speeds
-
-Existing frameworks compress at least three independent questions into a single exposure score:
-
-1. **Can AI reason about the task?** A legal brief requires expert synthesis; filing a form requires following a checklist. These demand different levels of cognitive complexity, and AI capability is advancing through them at a measurable, rapid pace.
-
-2. **Can AI physically do the task?** Drafting an email requires a keyboard. Harvesting strawberries requires perceiving variable fruit, applying precise force to a deformable object, and navigating unpredictable terrain. These are different deployment problems with different timelines.
-
-3. **Do institutions allow it?** A nurse can use AI to check drug interactions right now (R0). A nurse cannot use AI to administer controlled substances — that's statutorily restricted (R3). The technology doesn't matter; the barrier is institutional.
-
-These three dimensions change at structurally different rates. AI cognitive capability is doubling its autonomous task horizon roughly every three months. Physical deployment infrastructure moves on a 3–5 year cycle for structured environments, longer for unstructured ones. Regulatory barriers move on institutional timescales: years to decades.
-
-Any framework that collapses these three rates of change into a single number will systematically mispredict both the *location* and the *timing* of economic impact.
-
 ## The CDR Framework
 
-We built a taxonomy designed to keep these dimensions separate. CDR stands for:
+Existing frameworks compress at least three independent questions into a single exposure score. We built a taxonomy — CDR — designed to keep them separate.
 
-- **C-axis (Cognitive complexity):** Five levels from C0 (self-evident — "is a manual even necessary?") through C4 (discovery — "is the output itself a new manual others will follow?"). This extends Autor's binary routine/non-routine distinction into a gradient with economically meaningful boundaries.
+**C-axis: Cognitive complexity.** Can AI reason about the task? Five levels from C0 (self-evident — "is a manual even necessary?") through C4 (discovery — "is the output itself a new manual others will follow?"). Filing a form is C1 (procedural). Drafting a legal brief is C3 (expert synthesis). This extends Autor's binary routine/non-routine distinction into a gradient with economically meaningful boundaries. AI cognitive capability is advancing through these levels fast: autonomous task horizons are doubling roughly every three months.
 
-- **D-axis (Deployment difficulty):** Five levels from D0 (purely digital) through D4 (dynamic multi-modal — simultaneous real-time coordination of perception, locomotion, and manipulation under time pressure). This captures the physical requirements that stand between AI capability and real-world task performance.
+**D-axis: Deployment difficulty.** Can AI physically do the task? Five levels from D0 (purely digital — a keyboard is all you need) through D4 (dynamic multi-modal — simultaneous real-time coordination of perception, locomotion, and manipulation under time pressure). Drafting an email is D0. Harvesting strawberries — perceiving variable fruit, applying precise force to a deformable object, navigating unpredictable terrain — is D3. Physical deployment infrastructure moves on a 3–5 year cycle for structured environments, longer for unstructured ones.
 
-- **R-axis (Regulatory restrictions):** Five levels from R0 (no barrier) through R4 (moral agency required — the task definitionally requires a human person, like sworn testimony or giving informed consent).
+**R-axis: Regulatory restrictions.** Do institutions allow it? Five levels from R0 (no barrier) through R4 (moral agency required — the task definitionally requires a human person, like sworn testimony or giving informed consent). A nurse can use AI to check drug interactions (R0). A nurse cannot use AI to administer controlled substances — that's statutorily restricted (R3). The technology doesn't matter; the barrier is institutional. Regulatory barriers move on institutional timescales: years to decades.
 
-We classified every task in the U.S. economy using this framework. Specifically: 23,850 task-activity pairs across 923 occupations in O\*NET, classified by three language models (Claude Sonnet 4.6, GPT-5-mini, Gemini 3 Flash) using a multi-model consensus protocol, validated against flagship models. The full classification pipeline costs under $100 per run, making CDR a reusable longitudinal instrument rather than a one-time snapshot.
+These three dimensions change at structurally different rates. Any framework that collapses them into a single number will systematically mispredict both the *location* and the *timing* of economic impact.
+
+We classified every task in the U.S. economy along all three axes: 23,850 task-activity pairs across 923 occupations in O\*NET, classified by three language models (Claude Sonnet 4.6, GPT-5-mini, Gemini 3 Flash) using a multi-model consensus protocol, validated against flagship models. The full classification pipeline costs under $100 per run, making CDR a reusable longitudinal instrument rather than a one-time snapshot.
 
 ## The Headline Finding
 
