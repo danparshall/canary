@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "40% of the Economy Is Already in AI's Cognitive Reach"
+title: "Half the Economy Is Already in AI's Reach"
 description: "Existing measures of AI exposure disagree about which jobs are most affected. We argue the disagreement isn't measurement error — it's dimensional conflation. A new three-axis framework separates what AI can think about, what it can physically do, and what institutions allow."
 date: "2026-03-19"
 author: "Daniel Parshall, Ph.D."
@@ -40,12 +40,12 @@ We classified every task in the U.S. economy using this framework. Specifically:
 
 ## The Headline Finding
 
-**40.2% of U.S. economy-weighted labor time** falls in tasks that are:
+**50.5% of U.S. economy-weighted labor time** falls in tasks that are:
 - Cognitively within current AI reach (C ≤ 2: up to and including contextual judgment)
-- Purely digital (D0: no physical infrastructure required)
+- Deployable with existing infrastructure (D ≤ 1: digital tools plus commodity sensors — smartphones, wearables, cameras)
 - Facing no professional or statutory regulatory barrier (R < 2)
 
-These are tasks where a text-based AI interface can plausibly save a worker 50% of their time *today*, with no hardware deployment, no robotics, and no regulatory change needed.
+Half the economy. Not in five years. Now.
 
 The single largest cell in the entire framework is C2/D0: tasks requiring contextual judgment but no physical interaction. That cell alone accounts for 24% of all economy-weighted labor time. These aren't routine tasks. They require weighing tradeoffs, adapting to context, choosing among reasonable alternatives. Two workers might produce different but equally valid outputs. This is the heart of knowledge work — and it's already within AI's cognitive reach.
 
@@ -53,14 +53,18 @@ The single largest cell in the entire framework is C2/D0: tasks requiring contex
 
 The CDR framework enables a wavefront analysis: as each axis threshold is crossed, what fraction of the economy becomes accessible?
 
+![Figure 1: The Expanding Wavefront — a heatmap showing economy-weighted labor time by cognitive complexity and deployment difficulty, with three dashed rectangles representing the 2023, 2026, and projected 2030 automation wavefronts.](/images/task-exposure-figure1.png)
+
 | Wavefront | Economy share | Timeline |
 |-----------|-------------|----------|
-| C ≤ 1, D = 0 | 16.2% | Now (2023 boundary) |
-| C ≤ 2, D = 0 | 40.2% | Now (2026 boundary) |
-| C ≤ 2, D ≤ 1 | 50.5% | ~1 year |
+| C ≤ 1, D = 0 | 16.2% | 2023 (Eloundou et al. boundary) |
+| C ≤ 2, D = 0 | 40.2% | 2025 (digital-only) |
+| C ≤ 2, D ≤ 1 | 50.5% | Now |
 | C ≤ 2, D ≤ 2 | 65.3% | ~3–5 years |
 
-The step from 40% to 50% requires only sensing and locomotion capabilities — smartphones and wearables, not industrial robotics. The step to 65% requires structured manipulation in engineered environments, which is arriving faster than commonly assumed: Agility Robotics reports 98% task success in warehouse settings, and humanoid robot deployment grew to approximately 16,000 units globally in 2025.
+The 40.2% figure captures purely digital tasks — no physical component at all. But D1 capabilities (sensing, monitoring, navigation) already exist on commodity hardware: smartphone cameras, wearable sensors, consumer drones. Including these pushes the current frontier to 50.5%.
+
+The step to 65% requires structured manipulation in engineered environments, which is arriving faster than commonly assumed: Agility Robotics reports 98% task success in warehouse settings, and humanoid robot deployment grew to approximately 16,000 units globally in 2025.
 
 ## Regulation Is Thinner Than You Think
 
@@ -96,7 +100,7 @@ The policy window for AI's labor market effects is closing faster than the polic
 
 CDR is designed to be rerun as capabilities advance. The prompts are version-controlled, the pipeline is reproducible, and the cost is low enough for quarterly updates. The [replication package](https://github.com/danparshall/reproduction-task-exposure/) is available now; the [full paper](/papers/Parshall_Lopez-Luzuriaga_TaskExposure_2026.pdf) has the complete methodology and results.
 
-The 40% number will grow. The question is how fast, and through which dimensions. That's what CDR is built to track.
+The 50% number will grow. The question is how fast, and through which dimensions. That's what CDR is built to track.
 
 ---
 
