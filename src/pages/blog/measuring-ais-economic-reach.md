@@ -9,6 +9,8 @@ paper: "/papers/Parshall_Lopez-Luzuriaga_TaskExposure_2026.pdf"
 abstract: "/research/task-exposure/"
 ---
 
+![Figure 1: The Expanding Wavefront — economy-weighted labor time by cognitive complexity and deployment difficulty, with expanding automation wavefronts from 2023 through ~2030.](/images/task-exposure-figure1.png)
+
 How much of the economy is exposed to AI? Depends who you ask. Eloundou et al. say 80% of workers have at least some exposed tasks. Felten, Raj, and Seamans get a broadly similar but differently ranked list. When Gimbel et al. systematically compare seven leading metrics, they find the metrics agree that *something* is happening but disagree about *where* — and the disagreement is worst precisely among the occupations everyone cares about most.
 
 We argue this isn't primarily a measurement problem. It's a dimensional one.
@@ -41,8 +43,6 @@ The single largest cell in the entire framework is C2/D0: tasks requiring contex
 ## The Wavefront
 
 The CDR framework enables a wavefront analysis: as each axis threshold is crossed, what fraction of the economy becomes accessible?
-
-![Figure 1: The Expanding Wavefront — a heatmap showing economy-weighted labor time by cognitive complexity and deployment difficulty, with three dashed rectangles representing the 2023, 2026, and projected 2030 automation wavefronts.](/images/task-exposure-figure1.png)
 
 | Wavefront | Economy share | Timeline |
 |-----------|-------------|----------|
