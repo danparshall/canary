@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is 'artificial intelligence'? — Canary Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Helvetica+Neue&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 13.333in 7.5in;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-dark: #1A2A28;
+    --color-accent: #1A4A44;
+    --color-grey: #363636;
+    --color-light-grey: #436058;
+    --color-muted: #527872;
+    --color-bg: #FAFAF8;
+    --color-border: #e5e5e3;
+    --color-cartouche: #1A4A44;
+
+    --font-heading: 'Cinzel', 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+    --font-ui: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-grey);
+    background: #e5e5e3;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .slide {
+    width: 13.333in;
+    height: 7.5in;
+    padding: 0.6in 1in;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    margin: 0.5in auto;
+    box-shadow: 0 4px 24px rgba(26, 42, 40, 0.08);
+  }
+
+  .slide:last-child { page-break-after: auto; }
+
+  /* Deck topic — small, constant across slides per design spec */
+  .deck-topic {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 6px;
+  }
+
+  /* Cluster name — the unique heading for each slide */
+  .cluster-name {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--color-dark);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 28px;
+  }
+
+  .content {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* === Two-concept layout (default per design doc) === */
+  .two-concept {
+    display: flex;
+    gap: 64px;
+    height: 100%;
+    align-items: flex-start;
+  }
+  .two-concept > .concept {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* === One-concept layout (fallback per design doc) === */
+  .one-concept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 1in;
+  }
+
+  /* Icon placeholder — GPT will generate real icons later */
+  .icon-placeholder {
+    width: 140px;
+    height: 140px;
+    border: 2px dashed var(--color-muted);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    background: rgba(26, 74, 68, 0.02);
+  }
+  .one-concept .icon-placeholder {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Icon row — two icons side-by-side above a single text block */
+  .icon-row {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .icon-row .icon-placeholder {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 0;
+  }
+
+  .concept-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+  }
+  .one-concept .concept-title {
+    font-size: 26px;
+    margin-bottom: 22px;
+  }
+
+  .beats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 4.2in;
+  }
+  .one-concept .beats {
+    max-width: 8.5in;
+  }
+  .beats li {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--color-grey);
+    margin-bottom: 14px;
+    padding-left: 22px;
+    position: relative;
+    text-align: left;
+  }
+  .beats li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 10px;
+    height: 1px;
+    background: var(--color-accent);
+  }
+  .beats li:last-child { margin-bottom: 0; }
+  .beats li strong {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  /* Footer lockup — bottom-left per design spec */
+  .footer-lockup {
+    position: absolute;
+    bottom: 0.5in;
+    left: 0.5in;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-lockup svg {
+    height: 84px;
+    width: auto;
+  }
+  .footer-bird {
+    height: 63px;
+    width: auto;
+    display: block;
+  }
+
+  /* Slide number — bottom-right, subtle */
+  .slide-num {
+    position: absolute;
+    bottom: 0.45in;
+    right: 1in;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--color-border);
+  }
+
+  /* Voice notes — present in markup, hidden on screen and in print */
+  aside.voice-notes {
+    display: none;
+  }
+
+  @media print {
+    body { background: var(--color-bg); }
+    .slide {
+      margin: 0;
+      box-shadow: none;
+      break-after: page;
+      break-inside: avoid;
+    }
+    .slide:last-child { break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SLIDE 1: Inhuman minds
+     Two-concept layout: ANN | Not-human-not-code
+============================================================ -->
+<div class="slide">
+  <div class="deck-topic">What is 'artificial intelligence'?</div>
+  <div class="cluster-name">Inhuman minds</div>
+
+  <div class="content">
+    <div class="two-concept">
+      <div class="concept">
+        <div class="icon-placeholder">[ ICON ]<br>NN-style<br>diagram</div>
+        <div class="concept-title">Artificial neural networks</div>
+        <ul class="beats">
+          <li>Inspired by neuroscience</li>
+          <li>Densely connected, multi-path</li>
+          <li><strong>Flexible but opaque</strong></li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <div class="icon-placeholder">[ ICON ]<br>flowchart</div>
+        <div class="concept-title">Traditional programming</div>
+        <ul class="beats">
+          <li>Like a flowchart</li>
+          <li>Each decision narrows the space</li>
+          <li><strong>Interpretable but brittle</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <aside class="voice-notes">
+    The systems we call "AI" today are built on artificial neural networks — a computational structure originally inspired by the neuroscience community, dating to the 1940s and 60s. The key structural fact about an ANN: it's densely connected. Multiple outputs of one layer feed into multiple inputs of the next, so any given decision is shaped by activations all over the network at once. Contrast that with traditional programming, which is essentially a flowchart — at every step, a decision *narrows* the space of possible answers down one branch. That structural difference produces a tradeoff that's load-bearing for policy: traditional code is interpretable but brittle — you can read it line by line, but it fails the moment something doesn't fit the cases the programmer thought of. Neural networks are the opposite — incredibly flexible, can handle edge cases nobody coded for, but almost uninterpretable. You can read every weight and still not understand why the network said what it said. Hold onto that: AI isn't a person, but it also isn't code as we knew it. Genuinely new territory.
+  </aside>
+
+  <div class="footer-lockup">
+    <img src="../../logos/canary_X_bird.png" class="footer-bird" alt="Canary mark">
+    <!-- Canary Institute wordmark, light-bg variant, inlined -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 335" aria-label="Canary Institute">
+      <defs><style>
+        .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; font-size:88px; }
+        .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
+        .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:33px; letter-spacing:7px; font-weight:400; }
+      </style></defs>
+      <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+      <text x="82" y="122" text-anchor="middle" class="wm-l">C</text>
+      <text x="150" y="122" text-anchor="middle" class="cl-l">A</text>
+      <text x="192" y="122" class="wm-l" letter-spacing="4">NARY</text>
+      <text x="150" y="205" text-anchor="middle" class="cl-l">I</text>
+      <text x="192" y="205" class="wm-l" letter-spacing="4">NSTITUTE</text>
+      <line x1="50" y1="237" x2="650" y2="237" stroke="#1A4A44" stroke-width="3"/>
+      <text x="364" y="277" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
+    </svg>
+  </div>
+  <div class="slide-num">1 / 3</div>
+</div>
+
+
+<!-- ============================================================
+     SLIDE 2: Autocomplete on steroids
+     One-concept layout: corpus + verifiability
+============================================================ -->
+<div class="slide">
+  <div class="deck-topic">What is 'artificial intelligence'?</div>
+  <div class="cluster-name">Autocomplete on steroids</div>
+
+  <div class="content">
+    <div class="one-concept">
+      <div class="icon-row">
+        <div class="icon-placeholder">[ ICON 1 ]<br>corpus<br>(text + media)</div>
+        <div class="icon-placeholder">[ ICON 2 ]<br>mathematician<br>/ verifier</div>
+      </div>
+      <div class="concept-title">Predicting the next word &mdash; at planetary scale</div>
+      <ul class="beats">
+        <li>Has read essentially every <strong>novel, textbook, blog post</strong> &mdash; in every language</li>
+        <li>Has seen most publicly-posted <strong>images and video</strong></li>
+        <li>Being able to <strong>simulate a mathematician</strong> eventually means <em>being</em> one</li>
+        <li>For "verifiable" answers, even a <strong>99% error rate is fine</strong> &mdash; just keep the 1% that passed checks</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="voice-notes">
+    Yes, technically these systems predict the next word. But scale changes what "predict the next word" means. These models have ingested essentially every novel, textbook, encyclopedia, and blog post in every major language. They've seen most publicly-posted images and video. At that scale, predicting "what would come next here" starts to include things like "what would a mathematician write next." In January 2026, GPT-5.2 Pro produced solutions to three long-open Erdős problems — conjectures that had been unsolved for decades. The proofs were verified in Lean — a mechanical proof checker that doesn't accept hand-waving — and signed off by Terence Tao, one of the leading mathematicians alive. And here's the key: when the answer can be checked, even a 99% wrong rate is fine. You keep the 1% that passes. That's why AI can be useful in some domains long before it's reliable in others. The word "verifiable" is load-bearing.
+  </aside>
+
+  <div class="footer-lockup">
+    <img src="../../logos/canary_X_bird.png" class="footer-bird" alt="Canary mark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 335" aria-label="Canary Institute">
+      <defs><style>
+        .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; font-size:88px; }
+        .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
+        .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:33px; letter-spacing:7px; font-weight:400; }
+      </style></defs>
+      <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+      <text x="82" y="122" text-anchor="middle" class="wm-l">C</text>
+      <text x="150" y="122" text-anchor="middle" class="cl-l">A</text>
+      <text x="192" y="122" class="wm-l" letter-spacing="4">NARY</text>
+      <text x="150" y="205" text-anchor="middle" class="cl-l">I</text>
+      <text x="192" y="205" class="wm-l" letter-spacing="4">NSTITUTE</text>
+      <line x1="50" y1="237" x2="650" y2="237" stroke="#1A4A44" stroke-width="3"/>
+      <text x="364" y="277" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
+    </svg>
+  </div>
+  <div class="slide-num">2 / 3</div>
+</div>
+
+
+<!-- ============================================================
+     SLIDE 3: Memento limitations
+     One-concept layout: amnesia + database + injection
+============================================================ -->
+<div class="slide">
+  <div class="deck-topic">What is 'artificial intelligence'?</div>
+  <div class="cluster-name">Has <em>Memento</em> limitations</div>
+
+  <div class="content">
+    <div class="one-concept">
+      <div class="icon-placeholder">[ ICON ]<br>tbd</div>
+      <div class="concept-title">Like Leonard &mdash; works only with the notes it carries</div>
+      <ul class="beats">
+        <li><strong>Amnesia past the training cutoff</strong> &mdash; new memories require notes in the prompt</li>
+        <li><strong>Not a database</strong> &mdash; by default, answers come from memory, not lookup</li>
+        <li><strong>Subject to prompt injection</strong> &mdash; can be manipulated through the notes it's handed</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="voice-notes">
+    The movie Memento — Leonard has anterograde amnesia, can't form new memories, navigates the world with tattoos and Polaroid notes. AI systems have similar limitations. First: amnesia past the training cutoff. The model knows what it was trained on; after training, it doesn't update. Each conversation starts fresh. To remember anything new — your name, yesterday's conversation — it has to be carried in notes: in the prompt, or in a database the system can query. Second: not a database. By default, the model answers from memory — its trained-in pattern of what plausibly fits — not from a verified source. That's why hallucinations happen: it's not looking anything up, it's predicting what fits. Third: like Leonard, it can be manipulated by anyone who writes notes for it. Hide instructions in a webpage, a document, an email — when the model reads them, it may follow them. That's prompt injection, and it's a real policy concern as agents start reading the open web.
+  </aside>
+
+  <div class="footer-lockup">
+    <img src="../../logos/canary_X_bird.png" class="footer-bird" alt="Canary mark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 335" aria-label="Canary Institute">
+      <defs><style>
+        .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; font-size:88px; }
+        .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
+        .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:33px; letter-spacing:7px; font-weight:400; }
+      </style></defs>
+      <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+      <text x="82" y="122" text-anchor="middle" class="wm-l">C</text>
+      <text x="150" y="122" text-anchor="middle" class="cl-l">A</text>
+      <text x="192" y="122" class="wm-l" letter-spacing="4">NARY</text>
+      <text x="150" y="205" text-anchor="middle" class="cl-l">I</text>
+      <text x="192" y="205" class="wm-l" letter-spacing="4">NSTITUTE</text>
+      <line x1="50" y1="237" x2="650" y2="237" stroke="#1A4A44" stroke-width="3"/>
+      <text x="364" y="277" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
+    </svg>
+  </div>
+  <div class="slide-num">3 / 3</div>
+</div>
+
+</body>
+</html>
