@@ -8,7 +8,7 @@ Derived from comparing V1 agent drafts of "What is AI?" voice tracks against Dan
 
 Voice tracks are **scripts for live delivery**, not paragraphs to be read silently. Dan is *talking* over a slide, gesturing at it, riffing. Write for the mouth, not the page.
 
-## Eight cues, in priority order
+## Cues, in priority order
 
 ### 1. Lead with concession, not refutation
 - ❌ "Yes, technically these systems predict the next word. **But** scale changes what that means…"
@@ -39,9 +39,16 @@ Dan writes `<<pointing to node for illustration>>` mid-sentence. Voice notes are
 
 Use also for `<<land Erdős here>>` style placeholders — anything the visual cues Dan to deliver live.
 
-### 5. Define jargon inline, parenthetically, first time
+### 5. First ask if you need the jargon at all; if yes, define inline
+
+Before reaching for "define inline," ask whether the technical term is doing any work the plain-English version doesn't. RAG carries zero policy load — "let it search" does the whole job. Only define-inline when the term is policy-relevant or will recur in audience-facing material.
+
+- ❌ "Grounding — RAG, 'retrieval-augmented generation' — the model reads real documents..."
+- ✅ Just describe: "Let the model search — the internet, company docs, your own files."
+
+When the jargon IS necessary (e.g., "prompt injection" — they'll see it again):
 - ❌ "Subject to prompt injection — can be manipulated through the notes it's handed"
-- ✅ "we have to use notes (which we call 'prompts') in order to help it figure out what it's doing"
+- ✅ "we have to use notes (which we call 'prompts') ... that's called 'prompt injection'"
 
 Then the technical term is unlocked for the rest of the talk.
 
@@ -58,6 +65,35 @@ Memento has a plot. Use it. Dan turns "Lenny got set up by someone manipulating 
 - ✅ "from erasing the company database, to publicly releasing all classified documents"
 
 Name the disaster. Don't gesture at "concern."
+
+### 9. The closing line is the soundbite
+
+The last sentence of a voice track is the line most likely to be quoted, repeated, or pulled into a headline. Build it as a memorable phrase, not a clean stop.
+
+Structural moves that work: parallel constructions ("as long as X over Y"), inversions ("not Y, but X"), the policy load compressed into a single callable line.
+
+- ❌ Clean stop: "That's the seed of hallucination."
+- ✅ Soundbite: "That's the seed of hallucination, and we'll have it for as long as we favor 'confident' over 'correct.'"
+
+Soundbite-test: would this fit as a pull quote in a Politico story?
+
+### 10. For mitigation beats, the hedge earns the recommendation
+
+A mitigation listed without its limit reads as a silver bullet — which contradicts the deck's whole policy framing. Always include the "what this doesn't fix" beat in the same breath, on the same line.
+
+- ❌ "AI cross-checking — multiple AIs evaluate each answer"
+- ✅ "AI cross-check — ask two AIs; agreement is evidence, not proof"
+
+The hedge isn't a weakening; it's what makes the mitigation honest enough to recommend.
+
+### 11. Force parallel structure on list items
+
+Same grammatical form across the list. Same approximate length. Same role in the sentence. The audience's memory needs the rhythm; mixed forms break it.
+
+- ❌ Mixed: RAG / Tools / Human review / AI cross-checking (acronym, plural noun, two-word phrase, hyphenated phrase)
+- ✅ Parallel: Search / Compute / Human review / AI cross-check (all noun phrases, all 1–2 words, all the same role)
+
+Bonus when you can: a 2×2 grouping (e.g., model-uses-tool vs. someone-else-verifies) gives the audience a memory hook beyond the rhythm.
 
 ## Register & rhythm
 
@@ -92,4 +128,9 @@ Dan's tracks: ~150–190 words. Claude V1 drafts: ~200–230. **Aim for 150–18
 
 This document is V1, derived from one deck's worth of comparison. Expect Dan to push back, refine, and add cues. When that happens, update this file with the new lesson and a date marker.
 
-- **2026-05-30**: Initial cues from "What is AI?" Deck #1 comparison. Cue #3 ("voice track is scaffolding, not transcript") corrected from initial draft after Dan flagged that the Erdős/Tao proof point IS something he wants — the slide's mathematician/verifier icon will cue him to land it live.
+- **2026-05-30 (V1, "What is AI?" deck)**: Initial cues from Deck #1 comparison. Cue #3 ("voice track is scaffolding, not transcript") corrected from initial draft after Dan flagged that the Erdős/Tao proof point IS something he wants — the slide's mathematician/verifier icon will cue him to land it live.
+- **2026-05-30 (V2, Hallucination deck)**: First-pass voice came in closer to target this time — the V1 cues are working when actively used. New patterns surfaced during edits:
+  - **Cue #9 added** (closing line is the soundbite). Slide 1's "That's the seed of hallucination" became "...and we'll have it for as long as we favor 'confident' over 'correct.'" The symmetric "X over Y" structure makes the policy load callable.
+  - **Cue #5 extended** — first ask if you need the jargon at all. I named RAG on the slide; Dan cut it because "let it search" did the whole job. Define-inline only when the term is policy-relevant or will recur.
+  - **Cue #10 added** (hedge earns the mitigation). I wrote "AI cross-checking — multiple AIs evaluate each answer." Dan reframed: "ask two AIs; agreement is evidence, not proof." Without the hedge, a mitigation slide undermines the deck's own thesis.
+  - **Cue #11 added** (parallel structure on list items). I had a mixed list (RAG / Tools / Human review / AI cross-checking). Dan implicitly fixed it during reframing → all-parallel noun phrases. Plus a 2×2 grouping emerged (model-uses-tool vs. someone-else-verifies) that gives a free memory hook.
