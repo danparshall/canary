@@ -252,7 +252,7 @@
   </div>
 
   <aside class="voice-notes">
-    Here's the training loop that built today's AI. <<gesture to diagram>> The model produces two answers; a human picks the better one; you repeat it millions of times. Sounds reasonable — but notice what's missing: the human often can't check whether either answer is actually *true*. They just pick which sounds better. And humans systematically prefer confident answers over hedged ones. So we're literally training the model: when in doubt, sound sure. <<pause>> Now — on tasks where we CAN check, like math or working code, we don't need the human at all. We let the model try, run the check, reward what passes. That's where AI is racing ahead the fastest. <<gesture to last beat>> The flip side: where we can't easily check, the model has been trained to bullshit confidently. That's the seed of hallucination.
+    Here's the training loop that built today's AI. <<gesture to diagram>> The model produces two answers; a human picks the better one; you repeat it millions of times. Sounds reasonable — but notice what's missing: the human often can't check whether either answer is actually *true*. They just pick which sounds better. And humans systematically prefer confident answers over hedged ones. So we're literally training the model: when in doubt, sound sure. <<pause>> Now — on tasks where we CAN check, like math or working code, we don't need the human at all. We let the model try, run the check, reward what passes. That's where AI is racing ahead the fastest. <<gesture to last beat>> The flip side: where we can't easily check, the model has been trained to bullshit confidently. That's the seed of hallucination, and we'll have it for as long as we favor "confident" over "correct."
   </aside>
 
   <div class="footer-lockup">
@@ -290,24 +290,24 @@
   <div class="content">
     <div class="one-concept">
       <div class="icon-row">
-        <div class="icon-placeholder">[ ICON 1 ]<br>document<br>(RAG)</div>
-        <div class="icon-placeholder">[ ICON 2 ]<br>calculator<br>(tools)</div>
+        <div class="icon-placeholder">[ ICON 1 ]<br>magnifying<br>glass</div>
+        <div class="icon-placeholder">[ ICON 2 ]<br>calculator</div>
         <div class="icon-placeholder">[ ICON 3 ]<br>human<br>reviewer</div>
         <div class="icon-placeholder">[ ICON 4 ]<br>two AI<br>faces</div>
       </div>
       <div class="concept-title">Make it check, not guess</div>
       <ul class="beats">
-        <li><strong>RAG</strong> &mdash; model reads real documents instead of inventing</li>
-        <li><strong>Tools</strong> &mdash; calculator, code, search: check, don't just guess</li>
+        <li><strong>Search</strong> &mdash; let it search the internet, company docs, or your personal files</li>
+        <li><strong>Compute</strong> &mdash; calculator, code, math: work the problem, don't just guess</li>
         <li><strong>Human review</strong> &mdash; slowest, costliest, still the most reliable filter</li>
-        <li><strong>AI cross-checking</strong> &mdash; multiple AIs evaluate each answer</li>
+        <li><strong>AI cross-check</strong> &mdash; ask two AIs; agreement is evidence, not proof</li>
         <li><strong>None eliminate hallucination. Architect the workflow, not just the prompt.</strong></li>
       </ul>
     </div>
   </div>
 
   <aside class="voice-notes">
-    So if hallucination is structural, what do we do about it? Four families, none perfect. <<gesture to icons>> Grounding — RAG, "retrieval-augmented generation" — the model reads real documents and cites them, instead of inventing. Tools — calculator, code interpreter, search engine — it can *check*, not just guess. Human review on high-stakes outputs — slowest, most expensive, still the most reliable filter. And multi-AI cross-checking: same logic as the objective-tasks trick from slide one <<gesture back>>, just with AI graders instead of humans. The pattern: all four pull the model from "guess what sounds right" toward "verify before answering." None make hallucination go away — they make it rare enough that the system is useful. The takeaway is architectural: trust comes from the workflow, not the model itself.
+    So if hallucination is structural, what do we do about it? Four families, none perfect. <<gesture to icons>> Let the model search — the internet, company docs, your own files. It reads before it answers, citing what it found. Give it real compute — calculator, code interpreter, math tools. Now it works the problem instead of guessing. Human review on high-stakes outputs — slowest, most expensive, still the most reliable filter. And ask two AIs the same question — if they agree, that's evidence it's probably right, but not proof: they can share blind spots. All four pull the model from "guess what sounds right" toward "verify before answering." None make hallucination go away — they make it rare enough that the system is useful. The takeaway is architectural: trust comes from the workflow, not the model itself.
   </aside>
 
   <div class="footer-lockup">
