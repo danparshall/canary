@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hallucination — Canary Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Helvetica+Neue&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 13.333in 7.5in;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-dark: #1A2A28;
+    --color-accent: #1A4A44;
+    --color-grey: #363636;
+    --color-light-grey: #436058;
+    --color-muted: #527872;
+    --color-bg: #FAFAF8;
+    --color-border: #e5e5e3;
+    --color-cartouche: #1A4A44;
+
+    --font-heading: 'Cinzel', 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+    --font-ui: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-grey);
+    background: #e5e5e3;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .slide {
+    width: 13.333in;
+    height: 7.5in;
+    padding: 0.6in 1in;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    margin: 0.5in auto;
+    box-shadow: 0 4px 24px rgba(26, 42, 40, 0.08);
+  }
+
+  .slide:last-child { page-break-after: auto; }
+
+  /* Deck topic — small, constant across slides per design spec */
+  .deck-topic {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 6px;
+  }
+
+  /* Cluster name — the unique heading for each slide */
+  .cluster-name {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--color-dark);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 28px;
+  }
+
+  .content {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* === One-concept layout === */
+  .one-concept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 1in;
+  }
+
+  /* Icon placeholder — GPT will generate real icons later */
+  .icon-placeholder {
+    width: 140px;
+    height: 140px;
+    border: 2px dashed var(--color-muted);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    background: rgba(26, 74, 68, 0.02);
+  }
+
+  /* Icon row — multiple icons side-by-side above a single text block */
+  .icon-row {
+    display: flex;
+    gap: 56px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .icon-row .icon-placeholder {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 0;
+  }
+  /* Arrows between process-diagram icons (slide 1) */
+  .icon-row .flow-arrow {
+    font-family: var(--font-ui);
+    font-size: 28px;
+    color: var(--color-muted);
+    line-height: 1;
+  }
+
+  .concept-title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
+
+  .beats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 8.5in;
+  }
+  .beats li {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--color-grey);
+    margin-bottom: 12px;
+    padding-left: 22px;
+    position: relative;
+    text-align: left;
+  }
+  .beats li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 10px;
+    height: 1px;
+    background: var(--color-accent);
+  }
+  .beats li:last-child { margin-bottom: 0; }
+  .beats li strong {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  /* Footer lockup — bottom-left per design spec */
+  .footer-lockup {
+    position: absolute;
+    bottom: 0.5in;
+    left: 0.5in;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-lockup svg {
+    height: 84px;
+    width: auto;
+  }
+  .footer-bird {
+    height: 63px;
+    width: auto;
+    display: block;
+  }
+
+  /* Slide number — bottom-right, subtle */
+  .slide-num {
+    position: absolute;
+    bottom: 0.45in;
+    right: 1in;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--color-border);
+  }
+
+  /* Voice notes — present in markup, hidden on screen and in print */
+  aside.voice-notes {
+    display: none;
+  }
+
+  @media print {
+    body { background: var(--color-bg); }
+    .slide {
+      margin: 0;
+      box-shadow: none;
+      break-after: page;
+      break-inside: avoid;
+    }
+    .slide:last-child { break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SLIDE 1: Trained to sound sure
+     One-concept layout, icon-row as process diagram:
+       ANN  -->  two responses  -->  human pondering
+============================================================ -->
+<div class="slide">
+  <div class="deck-topic">Hallucination</div>
+  <div class="cluster-name">Trained to sound sure</div>
+
+  <div class="content">
+    <div class="one-concept">
+      <div class="icon-row">
+        <div class="icon-placeholder">[ ICON 1 ]<br>ANN<br>(neural net)</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="icon-placeholder">[ ICON 2 ]<br>two response<br>bubbles</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="icon-placeholder">[ ICON 3 ]<br>human<br>pondering</div>
+      </div>
+      <div class="concept-title">Two answers, one preference</div>
+      <ul class="beats">
+        <li>AI produces two answers to a prompt</li>
+        <li>Human picks which they prefer &mdash; repeated millions of times</li>
+        <li>Polished, confident answers tend to win</li>
+        <li><strong>On objective tasks (math, code), we cut out the human &mdash; and AI races ahead</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="voice-notes">
+    Here's the training loop that built today's AI. <<gesture to diagram>> The model produces two answers; a human picks the better one; you repeat it millions of times. Sounds reasonable — but notice what's missing: the human often can't check whether either answer is actually *true*. They just pick which sounds better. And humans systematically prefer confident answers over hedged ones. So we're literally training the model: when in doubt, sound sure. <<pause>> Now — on tasks where we CAN check, like math or working code, we don't need the human at all. We let the model try, run the check, reward what passes. That's where AI is racing ahead the fastest. <<gesture to last beat>> The flip side: where we can't easily check, the model has been trained to bullshit confidently. That's the seed of hallucination.
+  </aside>
+
+  <div class="footer-lockup">
+    <img src="../../logos/canary_X_bird.png" class="footer-bird" alt="Canary mark">
+    <!-- Canary Institute wordmark, light-bg variant, inlined -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 335" aria-label="Canary Institute">
+      <defs><style>
+        .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; font-size:88px; }
+        .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
+        .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:33px; letter-spacing:7px; font-weight:400; }
+      </style></defs>
+      <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+      <text x="82" y="122" text-anchor="middle" class="wm-l">C</text>
+      <text x="150" y="122" text-anchor="middle" class="cl-l">A</text>
+      <text x="192" y="122" class="wm-l" letter-spacing="4">NARY</text>
+      <text x="150" y="205" text-anchor="middle" class="cl-l">I</text>
+      <text x="192" y="205" class="wm-l" letter-spacing="4">NSTITUTE</text>
+      <line x1="50" y1="237" x2="650" y2="237" stroke="#1A4A44" stroke-width="3"/>
+      <text x="364" y="277" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
+    </svg>
+  </div>
+  <div class="slide-num">1 / 2</div>
+</div>
+
+
+<!-- ============================================================
+     SLIDE 2: What actually helps
+     One-concept layout, icon-row with four mitigations:
+       RAG (doc)  |  calculator  |  human reviewer  |  two AIs
+============================================================ -->
+<div class="slide">
+  <div class="deck-topic">Hallucination</div>
+  <div class="cluster-name">What actually helps</div>
+
+  <div class="content">
+    <div class="one-concept">
+      <div class="icon-row">
+        <div class="icon-placeholder">[ ICON 1 ]<br>document<br>(RAG)</div>
+        <div class="icon-placeholder">[ ICON 2 ]<br>calculator<br>(tools)</div>
+        <div class="icon-placeholder">[ ICON 3 ]<br>human<br>reviewer</div>
+        <div class="icon-placeholder">[ ICON 4 ]<br>two AI<br>faces</div>
+      </div>
+      <div class="concept-title">Make it check, not guess</div>
+      <ul class="beats">
+        <li><strong>RAG</strong> &mdash; model reads real documents instead of inventing</li>
+        <li><strong>Tools</strong> &mdash; calculator, code, search: check, don't just guess</li>
+        <li><strong>Human review</strong> &mdash; slowest, costliest, still the most reliable filter</li>
+        <li><strong>AI cross-checking</strong> &mdash; multiple AIs evaluate each answer</li>
+        <li><strong>None eliminate hallucination. Architect the workflow, not just the prompt.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="voice-notes">
+    So if hallucination is structural, what do we do about it? Four families, none perfect. <<gesture to icons>> Grounding — RAG, "retrieval-augmented generation" — the model reads real documents and cites them, instead of inventing. Tools — calculator, code interpreter, search engine — it can *check*, not just guess. Human review on high-stakes outputs — slowest, most expensive, still the most reliable filter. And multi-AI cross-checking: same logic as the objective-tasks trick from slide one <<gesture back>>, just with AI graders instead of humans. The pattern: all four pull the model from "guess what sounds right" toward "verify before answering." None make hallucination go away — they make it rare enough that the system is useful. The takeaway is architectural: trust comes from the workflow, not the model itself.
+  </aside>
+
+  <div class="footer-lockup">
+    <img src="../../logos/canary_X_bird.png" class="footer-bird" alt="Canary mark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 335" aria-label="Canary Institute">
+      <defs><style>
+        .wm-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#1A2A28; font-size:88px; }
+        .cl-l { font-family: "Trajan Pro","Cinzel","Times New Roman",serif; font-weight:400; fill:#FFFFFF; font-size:88px; }
+        .tl-l { font-family: "Helvetica Neue","Helvetica","Arial",sans-serif; fill:#527872; font-size:33px; letter-spacing:7px; font-weight:400; }
+      </style></defs>
+      <rect x="113" y="52" width="72" height="162" rx="14" fill="#1A4A44"/>
+      <text x="82" y="122" text-anchor="middle" class="wm-l">C</text>
+      <text x="150" y="122" text-anchor="middle" class="cl-l">A</text>
+      <text x="192" y="122" class="wm-l" letter-spacing="4">NARY</text>
+      <text x="150" y="205" text-anchor="middle" class="cl-l">I</text>
+      <text x="192" y="205" class="wm-l" letter-spacing="4">NSTITUTE</text>
+      <line x1="50" y1="237" x2="650" y2="237" stroke="#1A4A44" stroke-width="3"/>
+      <text x="364" y="277" text-anchor="middle" class="tl-l">FOR AI POLICY</text>
+    </svg>
+  </div>
+  <div class="slide-num">2 / 2</div>
+</div>
+
+</body>
+</html>
