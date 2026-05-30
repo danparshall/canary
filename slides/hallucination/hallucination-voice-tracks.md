@@ -27,6 +27,8 @@ Target length per slide: **150–180 words** (per `slides/voice-track-style.md`)
 
 (~155 words)
 
+DANSEZ: this sounds okay.  I'd make it "That's the seed of hallucination, and we will have it for as long as we favor 'confident' over 'correct'", but otherwise LGTM
+
 ---
 
 ## Slide 2 — "What actually helps" 🔴
@@ -44,6 +46,9 @@ Target length per slide: **150–180 words** (per `slides/voice-track-style.md`)
 > So if hallucination is structural, what do we do about it? Four families, none perfect. <<gesture to icons>> Grounding — RAG, "retrieval-augmented generation" — the model reads real documents and cites them, instead of inventing. Tools — calculator, code interpreter, search engine — it can *check*, not just guess. Human review on high-stakes outputs — slowest, most expensive, still the most reliable filter. And multi-AI cross-checking: same logic as the objective-tasks trick from slide one <<gesture back>>, just with AI graders instead of humans. The pattern: all four pull the model from "guess what sounds right" toward "verify before answering." None make hallucination go away — they make it rare enough that the system is useful. The takeaway is architectural: trust comes from the workflow, not the model itself.
 
 (~165 words)
+
+DANSEZ:
+this shouldn't be RAG per se, it sohuld be "verification tools" and the icon should be a search/magnifyglass icon; we don't need to explain RAG, it can be "let the model search: either the internet, company docs, or your personal files".  For multi-AI, use waht I said in the chat session.
 
 ---
 
