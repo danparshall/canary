@@ -156,6 +156,8 @@ Every topic gets an **overview** mini-deck. Three topics also get **branch** min
 
 Captured from the first pass of mini-deck #1 ("What is artificial intelligence?") so subsequent decks hit closer to the mark. Two categories: **framing principles** (re-applied per deck, no shortcut) and **template specifics** (locked, don't re-litigate).
 
+**Voice-track style**: a separate companion doc — `slides/voice-track-style.md` — captures cues for writing voice tracks in Dan's voice (derived from comparing V1 agent drafts against Dan's edits). Read it before drafting voice tracks for any deck.
+
 ### Framing principles
 
 - **Voice-track-driven means SHORT on-slide text.** Slides are visual cues with anchor phrases, not paragraphs. ~30–50 words of beat text per slide. Each beat: 6–12 words. Prose lives in the voice track, which Dan edits in-file after structure is locked.
@@ -251,8 +253,9 @@ Paste at the start of a new session:
 > Working on Canary mini-decks. Before doing anything, read in order:
 >
 > 1. `/Users/dan/code/websites/canary/slides/2026-05-27-canary-minidecks-design.md` — the whole doc, especially the **Drafting guidance** section at the end (V1 learnings).
-> 2. Then use the `creating-slides` skill. Where it conflicts with the design doc, the design doc wins. Specifically: light theme not dark, no title slide, no "Created with X" credit, canary brand palette.
-> 3. Reference deck: `/Users/dan/code/websites/canary/slides/what-is-ai/what-is-ai.html` is the V1 template shakedown. Match its structure and CSS.
+> 2. `/Users/dan/code/websites/canary/slides/voice-track-style.md` — voice-track cues, before drafting any voice prose.
+> 3. Then use the `creating-slides` skill. Where it conflicts with the design doc, the design doc wins. Specifically: light theme not dark, no title slide, no "Created with X" credit, canary brand palette.
+> 4. Reference deck: `/Users/dan/code/websites/canary/slides/what-is-ai/what-is-ai.html` is the V1 template shakedown. Match its structure and CSS.
 >
 > Today we're drafting: **[DECK NAME]** (mini-deck #N from the V1 topic list).
 >
