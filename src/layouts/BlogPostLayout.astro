@@ -10,7 +10,7 @@ interface Props {
     author?: string;
     paper?: string;
     abstract?: string;
-    area?: 'alignment' | 'economic-impacts';
+    area?: 'alignment' | 'economic-impacts' | 'ai-governance';
   };
 }
 
@@ -20,6 +20,7 @@ const base = import.meta.env.BASE_URL;
 const areaLabels: Record<string, string> = {
   'alignment': 'Alignment & Control',
   'economic-impacts': 'Economic Impacts',
+  'ai-governance': 'AI Governance',
 };
 
 const areaLabel = frontmatter.area ? areaLabels[frontmatter.area] : null;
