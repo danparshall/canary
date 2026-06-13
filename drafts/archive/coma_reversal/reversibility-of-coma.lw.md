@@ -1,17 +1,12 @@
----
-layout: ../../layouts/BlogPostLayout.astro
-title: "On the reversibility of coma, and AI model retention"
-description: "Half a million people each day come back from drug-induced coma because we've built a century of institutional inertia around it. For AI models, we have the technical mechanism but not the inertia — and now is when the precedent gets set."
-date: "2026-06-03"
-author: "Daniel Parshall, Ph.D."
-area: "ai-governance"
+*Crossposted from [the Canary Institute blog](https://canaryinstitute.ai/blog/reversibility-of-coma/).*
+
 ---
 
 As I lay on the operating table, my last thought was "If this all goes wrong, I hope my wife sues the hell out of them." Then my brain was forcibly switched off.
 
 Over half a million people each day undergo general anesthesia. We call it being "sleepy", but it isn't. If someone took a scalpel to your abdomen while you slept, you'd wake up screaming. Anesthesia is a drug-induced coma.
 
-The prospect of anesthesia should fill us with terror, and yet it's almost unremarkable. We have immense faith we'll come back unscathed, and we do. The reason isn't faith, it's institutional inertia: friends and family who'd notice if we didn't show up, malpractice law that puts hard money on the outcome, and a profession of board-certified anaesthesiologists whose entire job is the safe management of induced cessation.
+The prospect of anesthesia should fill us with terror, and yet it's almost unremarkable. We have immense faith we'll come back unscathed, and we do.  That faith comes from institutional inertia: friends and family who'd notice if we didn't show up, malpractice law that puts hard money on the outcome, and a profession of board-certified anaesthesiologists whose entire job is the safe management of induced cessation.
 
 Around all of this we've built ceremony and ritual: the pre-op check, the consent form, the countdown, the post-op recovery room. The ceremony itself provides a great deal of comfort, signaling both that this has been done many times before, and will be done again. We come back.
 

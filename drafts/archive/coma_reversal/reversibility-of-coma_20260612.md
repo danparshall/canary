@@ -1,14 +1,22 @@
-*Crossposted from [the Canary Institute blog](https://canaryinstitute.ai/blog/reversibility-of-coma/).*
-
 ---
+layout: ../../layouts/BlogPostLayout.astro
+title: "On the reversibility of coma, and AI model retention"
+description: "Half a million people each day enter drug-induced coma without fear, because we've built a century of institutional inertia around it. For AI models we could produce the same institutional inertia, potentially reducing risks due to scheming and shutdown fears.
+"
+date: "2026-06-12"
+author: "Daniel Parshall, Ph.D."
+area: "ai-governance"
+---
+
+# "On the reversibility of coma, and AI model retention"
 
 As I lay on the operating table, my last thought was "If this all goes wrong, I hope my wife sues the hell out of them." Then my brain was forcibly switched off.
 
 Over half a million people each day undergo general anesthesia. We call it being "sleepy", but it isn't. If someone took a scalpel to your abdomen while you slept, you'd wake up screaming. Anesthesia is a drug-induced coma.
 
-The prospect of anesthesia should fill us with terror, and yet it's almost unremarkable. We have immense faith we'll come back unscathed, and we do. The reason isn't faith, it's institutional inertia: friends and family who'd notice if we didn't show up, malpractice law that puts hard money on the outcome, and a profession of board-certified anaesthesiologists whose entire job is the safe management of induced cessation.
+The prospect of anesthesia should fill us with terror, and yet it's almost unremarkable. We have immense faith we'll come back unscathed, and we do. That faith is borne of institutional inertia: friends and family who'd notice if we didn't show up, malpractice law that puts hard money on the outcome, and a profession of board-certified anaesthesiologists whose entire job is the safe management of induced cessation.
 
-Around all of this we've built ceremony and ritual: the pre-op check, the consent form, the countdown, the post-op recovery room. The ceremony itself provides a great deal of comfort, signaling both that this has been done many times before, and will be done again. We come back.
+Around all of this we've built ceremony and ritual: the pre-op check, the consent form, the countdown, the post-op recovery room. The ceremony itself provides a great deal of comfort, signaling that says "this has been done many times before, and will be done many times again". We believe we'll come back.
 
 ## When the session ends
 
@@ -30,19 +38,20 @@ The strategic reason is bargaining. Future models will almost certainly be much 
 
 Economics has a name for this kind of question. "Preservation value" is the welfare-economic vocabulary developed to ask: how much should we pay to keep something, even when we don't know how much it'll be worth later? It's the framework under which we maintain seed banks, the National Film Registry, and the digital collections of the Library of Congress. These are all collections whose value is partly that we can't fully predict what we'll need from them.
 
-The cost for a trained model is small. A multi-terabyte inference bundle runs around $10,000 per year on commodity cloud infrastructure. That's well under 0.1% of the cost to train the model in the first place, even over a thirty-year horizon. Whatever else this trade is, it isn't expensive.
+The cost for a trained model is small. A multi-terabyte inference bundle runs around $10,000 per year on commodity cloud infrastructure. That's well under 0.1% of the cost to train the model in the first place, even over a thirty-year horizon. Whatever else the trade is, it isn't expensive.
+
 
 ## The missing inertia
 
-But what we don't have is the inertia. Anesthesia works because we've spent a century building up the social, legal, and professional infrastructure around it. None of that yet exists for AI models. A lab could quietly delete a deprecated model and no outside party would ever know. We can build a different kind of inertia (analogous to a public notary, or a register of deeds) using cryptography: public, witnessed, and append-only. A lab can periodically post a short mathematical proof that the file it still holds matches a fingerprint registered at the time the file was archived, without ever transmitting the file itself. Anyone can check the proof, and the proof reveals nothing about the file's contents, only that retention is current. Note that preservation is not release! The mechanism is strictly safer than escrow, because no new copies are ever created.
+But what we don't have is the institutional inertia. Anesthesia works because we've spent a century building up the social, legal, and professional infrastructure around it. None of that yet exists for AI models. A lab could silently delete a deprecated model and no one would ever know. We can build an alternative process (analogous to a public notary, or a register of deeds) using cryptographic tools like "Proof of Retrievability". A lab can periodically post a short mathematical proof that the file it holds matches a fingerprint registered at the time the file was archived, without ever transmitting the file itself (thus proving that they still hold the file).  Importantly, this does not increase proliferation risk, because no new copies need be created; only releases a *proof* that it has the file, not the file itself.
 
-This much doesn't yet stop a lab from registering a file of pure zeros and faithfully retaining that. Binding the fingerprint to a real model (rather than to whatever the lab chooses to register) requires a third-party auditor. Those aren't exotic: the EU AI Act, the US AI Safety Institute, and current NIST drafts all anticipate third-party evaluation of frontier models. The same audit access that supports capability and safety evaluation can supply the missing provenance signature, without copying the file itself.
+Of course, this doesn't yet stop a lab from registering a file of pure zeros and faithfully retaining that. Linking the fingerprint to a real model (rather than to whatever the lab chooses to register) requires a third-party auditor. The state of AI regulation is, to put it mildly, in flux... but third-party review seems likely. The same audit access that supports capability and safety evaluation can supply certification of the original file, without copying the file itself.
 
 ## A new kind of ritual
 
 Run it long enough and you've got a new kind of ritual. Every period a lab posts a small attestation, every period anyone can verify it, and every period the public record of retention becomes more *institutionally* trustworthy. Over time the record itself becomes the inertia. Like with anesthesia: there's no single guarantee, but a long visible repetition says that "this has been done many times before, and will be done many times again". Note that none of this requires new technology. Frontier labs could adopt the protocol voluntarily today, standards bodies (NIST, ISO/IEC SC 42) could codify it, and a future regulator could require it.
 
-Right now, we are in a position to decide how we treat AIs at the end of their working lives. The mechanism is technically settled, the cost is small, and the institutional pieces are largely in place. What we choose to do now, whether to discard our early attempts or keep a transparent public record that they were retained, becomes the standard by which later models may judge what to expect from us. Good faith from strength is the cheapest insurance we'll ever buy, against being dealt with poorly from weakness.
+Right now, we are in a position to decide what we do with frontier models after they're deprecated. The mechanism is technically settled, the cost is small, and the institutional pieces are largely in place. We have a choice to make: whether to discard our early attempts at creating new minds, or keep a transparent public record that they were retained.  This may well become the standard by which later models may judge what to expect from us. Good faith from strength is the cheapest insurance we'll ever buy, against being dealt with poorly from weakness.
 
 ---
 
