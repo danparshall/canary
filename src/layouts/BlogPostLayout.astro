@@ -37,7 +37,6 @@ const formatDate = (d: string) =>
         {frontmatter.author && <span class="post-author">{frontmatter.author}</span>}
       </div>
       <h1>{frontmatter.title}</h1>
-      {frontmatter.description && <p class="post-description">{frontmatter.description}</p>}
       {frontmatter.paper && (
         <p class="post-paper-link">
           This post accompanies a technical paper:
@@ -105,13 +104,6 @@ const formatDate = (d: string) =>
   .post-header h1 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
-  }
-
-  .post-description {
-    font-size: 1.05rem;
-    color: var(--color-grey);
-    line-height: 1.7;
-    font-style: italic;
   }
 
   .post-paper-link {
