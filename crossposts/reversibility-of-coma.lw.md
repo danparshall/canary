@@ -1,4 +1,4 @@
-*Crossposted from [the Canary Institute blog](https://canaryinstitute.ai/blog/reversibility-of-coma/).*
+_Crossposted from [the Canary Institute blog](https://canaryinstitute.ai/blog/reversibility-of-coma/)._
 
 As I lay on the operating table, my last thought was "If this all goes wrong, I hope my wife sues the hell out of them." Then my brain was forcibly switched off.
 
