@@ -171,6 +171,16 @@ const econPapers: Paper[] = [
     margin-bottom: 0.3rem;
   }
 
+  /* Paper titles are standalone links (the entire text block), not links
+     embedded in prose, so they are exempt from the global in-text underline. */
+  .paper-title a {
+    text-decoration: none;
+  }
+
+  .paper-title a:hover {
+    text-decoration: underline;
+  }
+
   .paper-desc {
     font-size: 0.88rem;
     line-height: 1.65;

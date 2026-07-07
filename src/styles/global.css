@@ -71,6 +71,12 @@ a:hover {
   color: var(--color-accent);
 }
 
+/* Links inside body text must be distinguishable without relying on color
+   (WCAG 1.4.1 / axe link-in-text-block). */
+main p a {
+  text-decoration: underline;
+}
+
 /* Layout */
 .container {
   max-width: var(--max-width);
@@ -103,6 +109,18 @@ hr {
 }
 
 /* Accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   top: -100%;
