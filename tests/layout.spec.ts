@@ -21,7 +21,9 @@ for (const path of pages) {
 
   test(`page ${label} has a footer`, async ({ page }) => {
     await page.goto(path);
-    const footer = page.locator('footer');
+    // body > footer: the page footer specifically — blockquotes on the home
+    // page legitimately contain their own semantic <footer> elements.
+    const footer = page.locator('body > footer');
     await expect(footer).toBeVisible();
   });
 }

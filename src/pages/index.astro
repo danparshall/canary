@@ -5,7 +5,8 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="The Canary Institute | AI Policy Research & Public Advocacy">
   <section class="hero">
-    <img src={`${base}canary_base.svg`} alt="The Canary Institute: AI Policy Research & Public Advocacy" class="hero-logo" />
+    <h1 class="visually-hidden">The Canary Institute: AI Policy Research &amp; Public Advocacy</h1>
+    <img src={`${base}canary_base.svg`} alt="" class="hero-logo" />
   </section>
 
   <p class="hero-intro">
@@ -173,6 +174,8 @@ const base = import.meta.env.BASE_URL;
   .hero-logo {
     height: clamp(10rem, 40vw, 19.2rem);
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .hero-intro {

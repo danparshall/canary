@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('home page tagline says "AI Safety Research & Public Advocacy"', async ({ page }) => {
+test('home page heading says "AI Policy Research & Public Advocacy"', async ({ page }) => {
   await page.goto('./');
-  const tagline = page.locator('.tagline');
-  await expect(tagline).toContainText('AI Safety Research');
+  const heading = page.locator('main h1');
+  await expect(heading).toContainText('AI Policy Research & Public Advocacy');
 });
 
 test('home page title contains site name', async ({ page }) => {
@@ -54,8 +54,8 @@ test('nav logo SVG does not contain gold fill', async ({ page }) => {
   expect(svgText).toContain('#1A4A44');
 });
 
-test('about page description references AI safety', async ({ page }) => {
+test('about page description references AI policy', async ({ page }) => {
   await page.goto('about/');
   const desc = page.locator('meta[name="description"]');
-  await expect(desc).toHaveAttribute('content', /AI safety/i);
+  await expect(desc).toHaveAttribute('content', /AI policy/i);
 });
