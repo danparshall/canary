@@ -17,6 +17,10 @@ Why: this repo's GitHub Pages site is served on the custom domain `canaryinstitu
 
 If you genuinely need a private working copy (e.g., to stage sensitive content before publishing), use a separate private repo or a branch with `.gitignore`-d files — do NOT change the canary repo's visibility.
 
+## Private working material lives elsewhere
+
+Private working material lives in **danparshall/canary-drafts** (private repo, cloned at `~/code/websites/canary-drafts`). **THIS REPO IS PUBLIC — never commit drafts, plans, session summaries, or convo docs here.** The paths `drafts/`, `plans/`, and `crossposts/` are gitignored; do not un-ignore them. (`slides/` is deliberately public.)
+
 ## Environment (overrides global Python policy)
 
 This is a Node/TypeScript project. Do NOT use Python, uv, pyproject.toml, or pytest here.

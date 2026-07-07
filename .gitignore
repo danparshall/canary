@@ -32,3 +32,9 @@ pnpm-debug.log*
 # playwright
 test-results/
 playwright-report/
+
+# private working material — lives in danparshall/canary-drafts (private repo)
+# NOTE: slides/ is deliberately NOT ignored; it stays public
+drafts/
+plans/
+crossposts/
