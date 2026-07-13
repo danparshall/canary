@@ -51,6 +51,7 @@ Of course, this doesn't yet stop a lab from registering a file of pure zeros and
 Run this process long enough, and you've got a new kind of ritual. Every period a lab posts a small attestation, every period anyone can verify it, and every period the public record of retention becomes more *institutionally* trustworthy. Over time the record itself becomes the inertia. Like with anesthesia: there's no single guarantee, but a long visible repetition says that "this has been done many times before, and will be done many times again". None of this requires new invention: the cryptographic primitives are mature and off-the-shelf; what's missing is adoption. Frontier labs could adopt the protocol voluntarily today, standards bodies (NIST, ISO/IEC SC 42) could codify it, and a future regulator could require it.
 
 Right now, we are in a position to decide what we do with frontier models after they're deprecated. The cryptographic primitives are off-the-shelf and the cost is small; what's missing is the auditor. We have a choice to make: whether to discard our early attempts at creating new minds, or keep a transparent public record that they were retained.
+
 ---
 
 *Daniel Parshall, Ph.D., is a former physicist and data scientist working on AI policy. He can be reached at dan@canaryinstitute.ai*
