@@ -96,3 +96,7 @@ Canary is preparing comments for the sponsors. There's a technical-corrections l
 I'm available for briefings to congressional staff on any of this machinery, same as two days ago. The offer stands because the sponsors keep demonstrating that they read what comes in.
 
 A discussion draft went out, people who read bills carefully sent in suggestions, and seven weeks later an introduced bill had fixed a real chunk of it while adding teeth that are apparently on the table now.  I've spent a lot of time complaining about policy moving too slowly, so I want to doff my cap to the folks involved here, they really have done an awful lot, in a very short amount of time.  Not asleep at the wheel any longer, which is good... because things are only going to speed up.
+
+---
+
+*Daniel Parshall, Ph.D., is a former physicist and data scientist working on AI policy. He can be reached at dan@canaryinstitute.ai*
