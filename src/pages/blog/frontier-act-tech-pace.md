@@ -21,6 +21,7 @@ FRONTIER is the core part of GAAIA, stripped of a lot of the horse-trading machi
 It is still a visibility bill at heart, but this time visibility comes with a big stick attached, which I'll get to.
 
 There are now 3 coverage categories instead of 2.  With FRONTIER, *any* developer training a model past 10^26 ops is a "frontier developer" and owes transparency reports and incident reporting
+
 - "large" developers have $50M in revenue plus $1B in AI development spending over a rolling 36 months; they additionally owe a published safety framework, an annual independent audit, and registration
 - "very large" developers are bumped up to $5B / $10B; they have the same requirements as "large", but also retain a licensed independent verification organization for ongoing assessment.  The top tier is roughly five companies.
 
