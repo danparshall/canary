@@ -43,10 +43,13 @@ In the Glass Perimeter, the owner of the datacenter is called the Operator (call
 - a signature[^signing]
 
 <figure>
+
 ![Normal operation: fingerprint everything, reveal nothing. Prompts and responses cross an optical boundary; the Verifier's Hasher is dumb by design and emits only hashes; the Operator's gateway recomputes every hash before it leaves the building.](https://canaryinstitute.ai/images/fig1_normal_operation.png)
+
 <figcaption>
 Normal operation. Every prompt and response crosses an optical boundary; the Verifier's Hasher emits only hashes, and every hash is cross-checked by the Operator before leaving the building.
 </figcaption>
+
 </figure>
 
 The Hasher's outbound message is passed to the Operator (over optical airgap, to avoid funny business), which relays it back to the Verifier's home base.  The Operator can see the hash and signature, so they know that no secrets are being exfiltrated, and they can calculate the hash of the output file on their own, to confirm that the Verifier didn't sneak anything in there either.  The Operator keeps a copy of the input data file (typically a single user prompt) on-site for a time period determined by agreement, and provides a "manifest" which is a high-level description of what each particular input file contains.
