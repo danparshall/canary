@@ -10,7 +10,7 @@ Why: this repo's GitHub Pages site is served on the custom domain `canaryinstitu
 
 1. https://github.com/settings/pages → Add a verified domain → `canaryinstitute.ai` → add the TXT record GitHub gives you (Namecheap DNS)
 2. Click Verify
-3. `gh api -X PUT repos/danparshall/canary/pages -f cname=canaryinstitute.ai` (do NOT include `https_enforced=true` in the same call — cert hasn't provisioned yet)
+3. `gh api -X PUT repos/danparshall/site-canary-institute/pages -f cname=canaryinstitute.ai` (do NOT include `https_enforced=true` in the same call — cert hasn't provisioned yet)
 4. GitHub auto-reattaches the existing Let's Encrypt cert and flips `https_enforced=true` on its own
 
 **Related: do not delete the TXT record `_github-pages-challenge-danparshall.canaryinstitute.ai` in DNS.** GitHub re-checks it periodically; if it lapses, the domain claim could revert and we'd be back to this dance.

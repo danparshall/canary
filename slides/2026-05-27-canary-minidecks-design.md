@@ -39,7 +39,7 @@ Viewer leaves with a **mental model + working vocabulary, fused**. They should u
 ### Format
 - **Output**: HTML slides (Dan has a specialized HTML slides skill to apply to implementation).
 - **Aspect ratio**: 16:9.
-- **Brand assets**: defined in the `danparshall/canary` repo (logo, bird, color scheme, fonts). Repo is private; next agent needs a scoped token.
+- **Brand assets**: defined in the `danparshall/site-canary-institute` repo (logo, bird, color scheme, fonts). Repo is private; next agent needs a scoped token.
 
 ### Slide anatomy
 - **Header**: full topic title. No breadcrumb, no parent reference, no deck-name prefix.
