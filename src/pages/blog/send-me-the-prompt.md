@@ -38,12 +38,12 @@ Or maybe you, dear reader, truly are someone who speaks English as a second lang
 For folks in those two categories, I might be inclined to read what you posted if you share a link to the original conversation[^convo].  But for the rest of y'all: save us both some time, and just send me the prompt.
 
 
-[^quinny]: [the original tweet](https://x.com/QuinnyPig/status/2092088373687328791)
+[^quinny]: <https://x.com/QuinnyPig/status/2092088373687328791>
 [^obvs]: No, I'm saying you're a bad person for OTHER reasons.
-[^amol]: For much more than 1000 words, see [the post from whence I stole inspiration for the figure](https://12gramsofcarbon.com/p/meditations-on-ai-and-the-future).
+[^amol]: For much more than 1000 words, see the post whence I stole inspiration for the figure at <https://12gramsofcarbon.com/p/meditations-on-ai-and-the-future>.
 [^foots]: Although I freely admit that Claude is my gofer for fact-checking, citations, and often footnotes.
 [^second]: Although you truly have my sympathy; I learned a second language as an adult and know how frustrating it is when you can't be the clever, witty person you are in your mother tongue.
-[^convo]: In the spirit of transparency, [here's mine](https://claude.ai/share/6a2ffb8b-b06f-498d-873e-0a4a78b78de3).
+[^convo]: In the spirit of transparency, here's mine: <https://claude.ai/share/6a2ffb8b-b06f-498d-873e-0a4a78b78de3>.
 
 ---
 
