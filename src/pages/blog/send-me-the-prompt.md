@@ -7,7 +7,7 @@ author: "Daniel Parshall, Ph.D."
 area: "ai-governance"
 ---
 
-*If you want people to actually read what you are posting, you should send the costly signal that demonstrates it isn't slop.*
+If you want people to *actually read* what you are posting, you should send the costly signal that demonstrates it isn't slop.
 
 ---
 
@@ -25,11 +25,11 @@ To be clear, this isn't a moral claim: I'm not saying "you used AI to write for 
 
 <figure>
 
-![Sketch-style plot of number of posts per week vs quality of post. A blue Pre-AI curve (area = 1) and a much taller orange Post-AI curve (area = 20) both decay with quality; at the high-quality tail, an arrow marks the tiny region labeled 'the part you'll read'.](https://canaryinstitute.ai/images/quality_vs_quantity_ai.png)
+![Sketch-style plot of number of posts per week vs quality of post.  A blue Pre-AI curve (area = 1) and a much taller orange Post-AI curve (area = 20) both decay with quality; at the high-quality tail, an arrow marks the tiny region labeled 'the part you'll read'.](https://canaryinstitute.ai/images/quality_vs_quantity_ai.png)
 
 </figure>
 
-By all means, *use* AI for drafting, exploring, and proofreading. I can't tell you how much it reduces my writer's block to say "Claude, make a draft"... and then upon seeing it, I can instantly understand what I *don't* want my essay to say, and can then write what I *do* want[^foots].  But I'm going to assume that if your piece is showing as "100% AI" on Pangram, then probability says it took you ten seconds to generate this, and would take me minutes to confirm that it's garbage.
+By all means, *use* AI for drafting, exploring, and proofreading.  I can't tell you how much it reduces my writer's block to say "Claude, make a draft"... and then upon seeing it, I can instantly understand what I *don't* want my essay to say, and can then write what I *do* want[^foots].  But I'm going to assume that if your piece is showing as "100% AI" on Pangram, then probability says it took you ten seconds to generate this, and would take me minutes to confirm that it's garbage.
 
 Now maybe you, dear reader, truly are that 1 person in 20 who had a long, nuanced conversation and explored all kinds of ideas before discarding most of them, only keeping the valuable ones.  But I won't be able to *tell that* without investing the effort, which, sorry, I don't have time to do.
 
