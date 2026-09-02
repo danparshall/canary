@@ -31,6 +31,8 @@ To be clear, this isn't a moral claim: I'm not saying "you used AI to write for 
 
 By all means, *use* AI for drafting, exploring, and proofreading.  I can't tell you how much it reduces my writer's block to say "Claude, make a draft"... and then upon seeing it, I can instantly understand what I *don't* want my essay to say, and can then write what I *do* want[^foots].  But if your piece is showing as "100% AI" on Pangram, then my prior belief is that it took you ten seconds to generate this, and would take me minutes to confirm that it's garbage.
 
+This is probably doubly-true for form-adjacent applications such as job postings, grants, fellowships, etc.  Now that it's so much easier to *submit* an application, orgs are looking for easier ways to *filter* out applications.  This has become such a pressing issue that my team created a SlopChecker[^slopcheck] repo at a recent hackathon for FAI/IFP (we took "Best In Show", incidentally!).  Automatically checking "was this written with AI?" is a **very** easy test to apply, and while some orgs have legal requirements to consider those applications anyway, plenty of orgs will just throw your application out immediately.
+
 Now maybe you, dear reader, truly are that 1 person in 20 who had a long, nuanced conversation and explored all kinds of ideas before discarding most of them, only keeping the valuable ones.  But I won't be able to *tell that* without investing the effort, which, sorry, I don't have time to do.
 
 Or maybe you, dear reader, truly are someone who speaks English as a second language, and you wrote the post in your native tongue, only using Claude to translate it.  But as before, I can't tell *until* I've put the effort in, and ain't nobody got time for that[^second].
@@ -42,6 +44,7 @@ For folks in those two categories, I might be inclined to read what you posted i
 [^obvs]: No, I'm saying you're a bad person for OTHER reasons.
 [^amol]: For much more than 1000 words, see the post whence I stole inspiration for the figure at <https://12gramsofcarbon.com/p/meditations-on-ai-and-the-future>.
 [^foots]: Although I freely admit that Claude is my gofer for fact-checking, citations, and often footnotes.
+[^slopcheck]: You try it yourself at <https://slop-checker.com>; the source code is at <https://github.com/nawagner/SlopChecker>.
 [^second]: Although you truly have my sympathy; I learned a second language as an adult and know how frustrating it is when you can't be the clever, witty person you are in your mother tongue.
 [^convo]: In the spirit of transparency, here's mine: <https://claude.ai/share/6a2ffb8b-b06f-498d-873e-0a4a78b78de3>.
 
