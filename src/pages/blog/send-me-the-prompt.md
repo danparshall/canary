@@ -9,6 +9,8 @@ area: "ai-governance"
 
 If you want people to *actually read* what you are posting, you should send the costly signal showing it isn't slop.
 
+*In alignment with our [AI Usage policy](https://canaryinstitute.ai/about#ai-usage), the Pangram score of [this piece](https://www.pangram.com/history/25db6a94-97a5-4970-afab-03941767cf6f): **100% human**.*
+
 ---
 
 I just saw a Xeet on Xitter[^quinny] that explained the most efficient compression algorithm I've ever seen:
